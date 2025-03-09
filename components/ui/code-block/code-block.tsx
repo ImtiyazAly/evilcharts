@@ -9,13 +9,14 @@ interface CodeBlockProps {
   code: string;
   clickToViewMore?: boolean;
   maxHeight?: number;
+  title?: string;
 }
 
 const CodeBlock = async ({
   language,
   code,
   clickToViewMore = false,
-  maxHeight = 300,
+  title,
 }: CodeBlockProps) => {
   const html = await codeToHtml(code, {
     lang: language,
@@ -27,17 +28,13 @@ const CodeBlock = async ({
       <div className="pb-2 py-1 px-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <SquareCode />
-          <span className="text-xs text-muted-foreground font-medium capitalize leading-none">
-            {language}
+          <span className="text-xs text-muted-foreground font-medium leading-none">
+            {title ? title : language}
           </span>
         </div>
         <CopyButton code={code} />
       </div>
-      <CodeBlockHtml
-        html={html}
-        clickToViewMore={clickToViewMore}
-        maxHeight={maxHeight}    
-      />
+      <CodeBlockHtml html={html} clickToViewMore={clickToViewMore} />
     </div>
   );
 };

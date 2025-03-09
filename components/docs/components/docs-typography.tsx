@@ -136,6 +136,25 @@ const DocsLink = ({
   );
 };
 
+const DocsCodeBadge = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <span
+      className={cn(
+        className,
+        "text-xs mx-1 px-1.5 py-0.5 rounded-md bg-muted border border-white/10"
+      )}
+    >
+      {children}
+    </span>
+  );
+};
+
 export {
   DocsContainer,
   DocsTitle,
@@ -145,4 +164,5 @@ export {
   DocsDescription,
   DocsSubContainer,
   DocsLink,
+  DocsCodeBadge,
 };
