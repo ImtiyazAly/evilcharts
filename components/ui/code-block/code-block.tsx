@@ -20,7 +20,7 @@ const CodeBlock = async ({
 }: CodeBlockProps) => {
   const html = await codeToHtml(code, {
     lang: language,
-    theme: "material-theme-darker",
+    theme: "github-dark",
   });
 
   return (
