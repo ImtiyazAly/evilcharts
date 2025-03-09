@@ -4,3 +4,7 @@ export { default as House2 } from "./House2";
 export { default as Tasks2 } from "./Tasks2";
 export { default as BookBookmark } from "./BookBookmark";
 export { default as CopyIcon } from "./CopyIcon";
+export { default as WindowCode } from "./WindowCode";
+export { default as SquareCode } from "./SquareCode";
+export { default as CodeEditor } from "./CodeEditor";
+export { default as ImageBinary } from "./ImageBinary";

@@ -70,6 +70,7 @@ const Page = () => {
               <CodeBlock
                 code={CPU_ARCHITECTURE_UTIL_FILE}
                 language="ts"
+                type="code"
                 title="utils.ts"
               />
             </StepContent>
@@ -107,6 +108,7 @@ const Page = () => {
               <CodeBlock
                 code={CPU_ARCHITECTURE_CSS_FILE}
                 language="css"
+                type="css"
                 title="globals.css"
                 clickToViewMore
               />
@@ -125,6 +127,7 @@ const Page = () => {
               <CodeBlock
                 code={CPU_ARCHITECTURE_SVG_FILE}
                 language="tsx"
+                type="code"
                 title="cpu-architecture.tsx"
                 clickToViewMore
               />
