@@ -3,6 +3,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Button as BorderButton } from "@/components/ui/border-button";
 import { cn } from "@/lib/utils";
 import { Lightbulb3 } from "@/assets/svgs";
+import Link from "next/link";
 
 const DocsHeader = () => {
   return (
@@ -16,9 +17,11 @@ const DocsHeader = () => {
         >
           <Lightbulb3 />
         </BorderButton>
-        <BorderButton variant="ghost" className={cn("h-7 cursor-pointer")}>
-          <span className="text-xs">Creator</span>
-        </BorderButton>
+        <Link href="https://legions.dev" target="_blank">
+          <BorderButton variant="ghost" className={cn("h-7 cursor-pointer")}>
+            <span className="text-xs">Creator</span>
+          </BorderButton>
+        </Link>
       </div>
     </header>
   );
