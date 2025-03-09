@@ -22,6 +22,7 @@ import {
   CPU_ARCHITECTURE_SNIPPET,
   CPU_ARCHITECTURE_SVG_FILE,
   CPU_ARCHITECTURE_UTIL_FILE,
+  CPU_ARCHITECTURE_CSS_FILE,
 } from "./snippets";
 import { Step, StepContent, Steps } from "@/components/ui/steps";
 
@@ -35,7 +36,7 @@ const Page = () => {
       </DocsContainer>
       <CodePreviewTab>
         <PreviewTab>
-          <div className="p-4 rounded-md bg-accent/20">
+          <div className="p-4 rounded-xl bg-accent/20">
             <CpuArchitecture />
           </div>
         </PreviewTab>
@@ -95,6 +96,20 @@ const Page = () => {
                 </DocsLink>
                 .
               </DocsParagraph>
+            </StepContent>
+          </Step>
+          <Step>
+            <DocsSubtitle title="Add CSS File" withoutLink />
+            <StepContent>
+              <DocsParagraph>
+                Add css text in <DocsCodeBadge>globals.css</DocsCodeBadge> file.
+              </DocsParagraph>
+              <CodeBlock
+                code={CPU_ARCHITECTURE_CSS_FILE}
+                language="css"
+                title="globals.css"
+                clickToViewMore
+              />
             </StepContent>
           </Step>
           <Step>
