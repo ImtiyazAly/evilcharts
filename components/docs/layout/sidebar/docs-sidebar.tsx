@@ -1,5 +1,7 @@
-import * as React from "react";
+"use client";
 
+import * as React from "react";
+import { usePathname } from "next/navigation";
 import {
   Sidebar,
   SidebarContent,
@@ -13,47 +15,53 @@ import {
 import { SIDEBAR_OPTIONS } from "@/constants/docs/sidebar-options";
 import DocsSidebarHeader from "./sidebar-header";
 import Link from "next/link";
-import { BookBookmark, House2, Tasks2 } from "@/assets/svgs";
+import { SidebarOptionsProps } from "@/types/docs/sidebar-types";
+import { Badge } from "@/components/ui/badge";
 
 export function DocsSidebar({
   ...props
 }: React.ComponentProps<typeof Sidebar>) {
+  const pathname = usePathname();
+
+  const getActiveItem = (items: SidebarOptionsProps) => {
+    return [...items.gettingStarted, ...items.components]
+      .flatMap((group) => group.items)
+      .find((item) => item.url === pathname);
+  };
+
   return (
-    <Sidebar {...props}>
+    <Sidebar className="z-50" {...props}>
       <DocsSidebarHeader />
       <SidebarContent>
-        <SidebarGroup key="main">
-          <SidebarGroupLabel>Main</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild isActive>
-                  <Link href="/docs">
-                    <House2 />
-                    <span>Home</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/docs">
-                    <Tasks2 />
-                    <span>Getting Started</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/docs">
-                    <BookBookmark />
-                    <span>Guides</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-        {/* Options */}
+        {SIDEBAR_OPTIONS.gettingStarted.map((item) => (
+          <SidebarGroup key={item.title}>
+            <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {item.items.map((item) => (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton
+                      asChild
+                      isActive={
+                        getActiveItem(SIDEBAR_OPTIONS)?.url === item.url
+                      }
+                    >
+                      <Link href={item.url}>
+                        {item.icon}
+                        <span>{item.title}</span>
+                        {item.badge && (
+                          <Badge variant={item.badge.variant}>
+                            {item.badge.label}
+                          </Badge>
+                        )}
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        ))}
         {SIDEBAR_OPTIONS.components.map((item) => (
           <SidebarGroup key={item.title}>
             <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
@@ -61,8 +69,24 @@ export function DocsSidebar({
               <SidebarMenu>
                 {item.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={item.isActive}>
-                      <a href={item.url}>{item.title}</a>
+                    <SidebarMenuButton
+                      asChild
+                      isActive={
+                        getActiveItem(SIDEBAR_OPTIONS)?.url === item.url
+                      }
+                    >
+                      <Link href={item.url}>
+                        {item.icon}
+                        <span>{item.title}</span>
+                        {item.badge && (
+                          <Badge
+                            className="text-[10px] h-4"
+                            variant={item.badge.variant}
+                          >
+                            {item.badge.label}
+                          </Badge>
+                        )}
+                      </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}

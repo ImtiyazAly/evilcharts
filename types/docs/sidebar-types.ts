@@ -1,21 +1,26 @@
+import { BadgeVariants } from "@/components/ui/badge";
+
 interface SidebarBadgeProps {
   label: string;
-  variant: "default";
+  variant: BadgeVariants;
 }
 
 interface SidebarItemProps {
   title: string;
   url: string;
-  isActive?: boolean;
   badge?: SidebarBadgeProps;
+  icon?: React.ReactNode;
+}
+
+interface SidebarGroupProps {
+  title: string;
+  url: string;
+  items: SidebarItemProps[];
 }
 
 interface SidebarOptionsProps {
-  components: {
-    title: string;
-    url: string;
-    items: SidebarItemProps[];
-  }[];
+  gettingStarted: SidebarGroupProps[];
+  components: SidebarGroupProps[];
 }
 
 export type { SidebarBadgeProps, SidebarItemProps, SidebarOptionsProps };

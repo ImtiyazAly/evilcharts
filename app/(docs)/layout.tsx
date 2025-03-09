@@ -14,7 +14,7 @@ export default function RootLayout({
         {/* Header */}
         <DocsHeader />
         {/* Childrens */}
-        <div className="p-4 w-full">{children}</div>
+        <div className="p-6 w-full">{children}</div>
       </SidebarInset>
     </SidebarProvider>
   );

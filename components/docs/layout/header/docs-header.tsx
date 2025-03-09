@@ -6,8 +6,8 @@ import { Lightbulb3 } from "@/assets/svgs";
 
 const DocsHeader = () => {
   return (
-    <header className="flex h-14 shrink-0 items-center justify-between gap-2 border-b border-dashed px-4 sticky top-0 bg-background">
-      <SidebarTrigger className="-ml-1" />
+    <header className="flex h-14 shrink-0 items-center justify-between gap-2 border-b border-dashed px-4 sticky top-0 bg-background z-50">
+      <SidebarTrigger />
       <div className="flex items-center gap-2">
         <BorderButton
           variant="ghost"
