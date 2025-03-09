@@ -1,4 +1,4 @@
-export const CPU_ARCHITECTURE_DEPENDENCIES = `npm i motion clsx tailwind-merge`;
+export const CPU_ARCHITECTURE_DEPENDENCIES = `npm i clsx tailwind-merge`;
 export const CPU_ARCHITECTURE_UTIL_FILE = `import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
