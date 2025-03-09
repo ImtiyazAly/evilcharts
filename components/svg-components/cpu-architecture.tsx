@@ -133,8 +133,15 @@ const CpuArchitecture = () => {
         />
       </g>
       {/* CPU Box */}
-      <foreignObject x="60" y="35" width="80" height="30" fill="transparent">
-        <div className="relative left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.34]">
+      <foreignObject
+        x="60"
+        y="35"
+        width="80"
+        height="30"
+        fill="transparent"
+        overflow="visible"
+      >
+        <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.34]">
           {/* CPU Connectors */}
           {/* Top */}
           <div className="absolute -top-2 left-1/4 h-3 w-2 rounded-t-[2px] bg-gradient-to-b from-[#515151] to-[#181818]" />

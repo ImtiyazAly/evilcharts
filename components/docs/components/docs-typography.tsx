@@ -147,7 +147,7 @@ const DocsCodeBadge = ({
     <span
       className={cn(
         className,
-        "text-xs mx-1 px-1.5 py-0.5 rounded-md bg-muted border border-white/10"
+        "text-xs mx-1 px-1.5 py-0.5 rounded-md bg-muted border border-white/10 whitespace-nowrap"
       )}
     >
       {children}

@@ -21,7 +21,7 @@ const CopyButton = ({ code }: CopyButtonProps) => {
 
   return (
     <Button
-      className="h-6 w-6 cursor-pointer opacity-0 group-hover:opacity-100 duration-200 relative"
+      className="h-6 w-6 cursor-pointer duration-200 relative"
       variant="ghost"
       size="icon"
       onClick={handleCopy}
