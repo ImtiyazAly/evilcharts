@@ -30,12 +30,14 @@ function Steps({ className, children, ...props }: StepsProps) {
         return (
           <div key={index} className="relative">
             {/* Add connecting line except for last item */}
-            {!isLastStep && (
-              <div
-                className="absolute left-[12px] top-[24px] h-[calc(100%-24px)] w-[1px] bg-border"
-                aria-hidden="true"
-              />
-            )}
+
+            <div
+              className={cn(
+                "absolute left-[12px] top-[24px] h-[calc(100%-24px)] w-[1px] bg-border",
+                isLastStep && "hidden"
+              )}
+              aria-hidden="true"
+            />
 
             {/* Clone child and inject index for numbering */}
             {React.cloneElement(child, {

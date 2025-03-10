@@ -168,7 +168,7 @@
 */
 
 .page {
-  @apply flex flex-col gap-4 max-w-[800px] mx-auto;
+  @apply flex flex-col gap-4 max-w-[700px] mx-auto;
 }
 
 pre {

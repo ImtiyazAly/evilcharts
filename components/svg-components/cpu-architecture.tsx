@@ -1,13 +1,33 @@
-import { AnimatedShinyText } from "@/components/ui/shiny-text";
-
+import { cn } from "@/lib/utils";
 import React from "react";
+export interface CpuArchitectureSvgProps {
+  className?: string;
+  width?: string;
+  height?: string;
+  text?: string;
+  showCpuConnections?: boolean;
+  lineMarkerSize?: number;
+  animateText?: boolean;
+  animateLines?: boolean;
+  animateMarkers?: boolean;
+}
 
-const CpuArchitecture = () => {
+const CpuArchitecture = ({
+  className,
+  width = "100%",
+  height = "100%",
+  text = "CPU",
+  showCpuConnections = true,
+  animateText = true,
+  lineMarkerSize = 18,
+  animateLines = true,
+  animateMarkers = true,
+}: CpuArchitectureSvgProps) => {
   return (
     <svg
-      className="text-muted"
-      width="100%"
-      height="100%"
+      className={cn("text-muted", className)}
+      width={width}
+      height={height}
       viewBox="0 0 200 100"
     >
       {/* Paths */}
@@ -20,9 +40,17 @@ const CpuArchitecture = () => {
         markerStart="url(#cpu-circle-marker)"
       >
         {/* 1st */}
-        <path d="M 10 20 h 79.5 q 5 0 5 5 v 70" />
+        <path
+          strokeDasharray="100 100"
+          pathLength="100"
+          d="M 10 20 h 79.5 q 5 0 5 5 v 30"
+        />
         {/* 2nd */}
-        <path d="M 180 10 h -69.7 q -5 0 -5 5 v 24" />
+        <path
+          strokeDasharray="100 100"
+          pathLength="100"
+          d="M 180 10 h -69.7 q -5 0 -5 5 v 30"
+        />
         {/* 3rd */}
         <path d="M 130 20 v 21.8 q 0 5 -5 5 h -10" />
         {/* 4th */}
@@ -40,16 +68,18 @@ const CpuArchitecture = () => {
         {/* 8th */}
         <path d="M 30 30 h 25 q 5 0 5 5 v 6.5 q 0 5 5 5 h 20" />
         {/* Animation For Path Starting */}
-        <animate
-          attributeName="stroke-dashoffset"
-          from="100"
-          to="0"
-          dur="1s"
-          fill="freeze"
-          calcMode="spline"
-          keySplines="0.25,0.1,0.5,1"
-          keyTimes="0; 1"
-        />
+        {animateLines && (
+          <animate
+            attributeName="stroke-dashoffset"
+            from="100"
+            to="0"
+            dur="1s"
+            fill="freeze"
+            calcMode="spline"
+            keySplines="0.25,0.1,0.5,1"
+            keyTimes="0; 1"
+          />
+        )}
       </g>
 
       {/* 1. Blue Light */}
@@ -133,36 +163,84 @@ const CpuArchitecture = () => {
         />
       </g>
       {/* CPU Box */}
-      <foreignObject
-        x="60"
-        y="35"
-        width="80"
-        height="30"
-        fill="transparent"
-        overflow="visible"
-      >
-        <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.34]">
-          {/* CPU Connectors */}
-          {/* Top */}
-          <div className="absolute -top-2 left-1/4 h-3 w-2 rounded-t-[2px] bg-gradient-to-b from-[#515151] to-[#181818]" />
-          <div className="absolute -top-2 right-1/4 h-3 w-2 rounded-t-[2px] bg-gradient-to-b from-[#515151] to-[#181818]" />
-          {/* Bottom */}
-          <div className="absolute -bottom-2 left-1/4 h-3 w-2 rounded-b-[2px] bg-gradient-to-t from-[#515151] to-[#181818]" />
-          <div className="absolute -bottom-2 right-1/4 h-3 w-2 rounded-b-[2px] bg-gradient-to-t from-[#515151] to-[#181818]" />
-          {/* Left */}
-          <div className="absolute -left-2 top-1/4 h-2 w-3 rounded-l-[2px] bg-gradient-to-r from-[#515151] to-[#181818]" />
-          <div className="absolute -left-2 bottom-1/4 h-2 w-3 rounded-l-[2px] bg-gradient-to-r from-[#515151] to-[#181818]" />
-          {/* Right */}
-          <div className="absolute -right-2 top-1/4 h-2 w-3 rounded-r-[2px] bg-gradient-to-l from-[#515151] to-[#181818]" />
-          <div className="absolute -right-2 bottom-1/4 h-2 w-3 rounded-r-[2px] bg-gradient-to-l from-[#515151] to-[#181818]" />
-          {/* CPU TextBox */}
-          <div className="relative z-10 grid h-14 w-[80px] place-items-center rounded-md bg-[#181818] shadow-lg">
-            <AnimatedShinyText className="text-xl font-semibold">
-              CPU
-            </AnimatedShinyText>
-          </div>
-        </div>
-      </foreignObject>
+      <g>
+        {/* Cpu connections */}
+        {showCpuConnections && (
+          <g fill="url(#cpu-connection-gradient)">
+            <rect x="93" y="37" width="2.5" height="5" rx="0.7" />
+            <rect x="104" y="37" width="2.5" height="5" rx="0.7" />
+            <rect
+              x="116.3"
+              y="44"
+              width="2.5"
+              height="5"
+              rx="0.7"
+              transform="rotate(90 116.25 45.5)"
+            />
+            <rect
+              x="122.8"
+              y="44"
+              width="2.5"
+              height="5"
+              rx="0.7"
+              transform="rotate(90 116.25 45.5)"
+            />
+            <rect
+              x="104"
+              y="16"
+              width="2.5"
+              height="5"
+              rx="0.7"
+              transform="rotate(180 105.25 39.5)"
+            />
+            <rect
+              x="114.5"
+              y="16"
+              width="2.5"
+              height="5"
+              rx="0.7"
+              transform="rotate(180 105.25 39.5)"
+            />
+            <rect
+              x="80"
+              y="-13.6"
+              width="2.5"
+              height="5"
+              rx="0.7"
+              transform="rotate(270 115.25 19.5)"
+            />
+            <rect
+              x="87"
+              y="-13.6"
+              width="2.5"
+              height="5"
+              rx="0.7"
+              transform="rotate(270 115.25 19.5)"
+            />
+          </g>
+        )}
+        {/* Main CPU Rectangle */}
+        <rect
+          x="85"
+          y="40"
+          width="30"
+          height="20"
+          rx="2"
+          fill="#181818"
+          filter="url(#cpu-light-shadow)"
+        />
+        {/* CPU Text */}
+        <text
+          x="92"
+          y="52.5"
+          fontSize="7"
+          fill={animateText ? "url(#cpu-text-gradient)" : "white"}
+          fontWeight="600"
+          letterSpacing="0.05em"
+        >
+          {text}
+        </text>
+      </g>
       {/* Masks */}
       <defs>
         <mask id="cpu-mask-1">
@@ -253,13 +331,28 @@ const CpuArchitecture = () => {
           <stop offset="0%" stopColor="#f43f5e" />
           <stop offset="100%" stopColor="transparent" />
         </radialGradient>
+        <filter
+          id="cpu-light-shadow"
+          x="-50%"
+          y="-50%"
+          width="200%"
+          height="200%"
+        >
+          <feDropShadow
+            dx="1.5"
+            dy="1.5"
+            stdDeviation="1"
+            floodColor="black"
+            floodOpacity="0.1"
+          />
+        </filter>
         <marker
           id="cpu-circle-marker"
           viewBox="0 0 10 10"
           refX="5"
           refY="5"
-          markerWidth="18"
-          markerHeight="18"
+          markerWidth={lineMarkerSize}
+          markerHeight={lineMarkerSize}
         >
           <circle
             id="innerMarkerCircle"
@@ -270,9 +363,58 @@ const CpuArchitecture = () => {
             stroke="#232323"
             strokeWidth="0.5"
           >
-            <animate attributeName="r" values="0; 3; 2" dur="0.5s" />
+            {animateMarkers && (
+              <animate attributeName="r" values="0; 3; 2" dur="0.5s" />
+            )}
           </circle>
         </marker>
+        {/* Cpu connection gradient */}
+        <linearGradient
+          id="cpu-connection-gradient"
+          x1="0"
+          y1="0"
+          x2="0"
+          y2="1"
+        >
+          <stop offset="0%" stopColor="#4F4F4F" />
+          <stop offset="60%" stopColor="#121214" />
+        </linearGradient>
+        {/* Add CPU Text Gradient */}
+        <linearGradient id="cpu-text-gradient" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#666666">
+            <animate
+              attributeName="offset"
+              values="-2; -1; 0"
+              dur="5s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keyTimes="0; 0.5; 1"
+              keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+            />
+          </stop>
+          <stop offset="25%" stopColor="white">
+            <animate
+              attributeName="offset"
+              values="-1; 0; 1"
+              dur="5s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keyTimes="0; 0.5; 1"
+              keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+            />
+          </stop>
+          <stop offset="50%" stopColor="#666666">
+            <animate
+              attributeName="offset"
+              values="0; 1; 2;"
+              dur="5s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keyTimes="0; 0.5; 1"
+              keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+            />
+          </stop>
+        </linearGradient>
       </defs>
     </svg>
   );

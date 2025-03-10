@@ -4,7 +4,6 @@ import {
   DocsCodeBadge,
   DocsContainer,
   DocsDescription,
-  DocsLink,
   DocsParagraph,
   DocsSubtitle,
   DocsTitle,
@@ -18,13 +17,13 @@ import { CpuArchitecture } from "@/components/svg-components/cpu-architecture";
 import { CodeBlock } from "@/components/ui/code-block/code-block";
 import {
   CPU_ARCHITECTURE_DEPENDENCIES,
-  CPU_ARCHITECTURE_SHINY_TEXT_FILE,
-  CPU_ARCHITECTURE_SNIPPET,
   CPU_ARCHITECTURE_SVG_FILE,
   CPU_ARCHITECTURE_UTIL_FILE,
   CPU_ARCHITECTURE_CSS_FILE,
 } from "./snippets";
 import { Step, StepContent, Steps } from "@/components/ui/steps";
+import ApiReference from "@/components/docs/layout/api-reference-table/api-reference";
+import { cpuArchitectureApiRefData } from "@/constants/apiRefData/cpu-architecture";
 
 const Page = () => {
   return (
@@ -42,7 +41,7 @@ const Page = () => {
         </PreviewTab>
         <CodeTab>
           <CodeBlock
-            code={CPU_ARCHITECTURE_SNIPPET.BASIC}
+            code={CPU_ARCHITECTURE_SVG_FILE}
             language="tsx"
             title="cpu-architecture.tsx"
             clickToViewMore
@@ -76,34 +75,11 @@ const Page = () => {
             </StepContent>
           </Step>
           <Step>
-            <DocsSubtitle title="Add Shiny Text Component" withoutLink />
+            <DocsSubtitle title="Add CSS Classes" withoutLink />
             <StepContent>
               <DocsParagraph>
-                Add a{" "}
-                <DocsCodeBadge>components/ui/shiny-text.tsx</DocsCodeBadge>
-                component in your components directory.
-              </DocsParagraph>
-              <CodeBlock
-                code={CPU_ARCHITECTURE_SHINY_TEXT_FILE}
-                language="bash"
-              />
-              <DocsParagraph>
-                This component is provided by{" "}
-                <DocsLink
-                  href="https://magicui.design/docs/components/animated-shiny-text"
-                  _blank
-                >
-                  Magic UI
-                </DocsLink>
-                .
-              </DocsParagraph>
-            </StepContent>
-          </Step>
-          <Step>
-            <DocsSubtitle title="Add CSS File" withoutLink />
-            <StepContent>
-              <DocsParagraph>
-                Add css text in <DocsCodeBadge>globals.css</DocsCodeBadge> file.
+                Add css classes in <DocsCodeBadge>globals.css</DocsCodeBadge>{" "}
+                file.
               </DocsParagraph>
               <CodeBlock
                 code={CPU_ARCHITECTURE_CSS_FILE}
@@ -135,6 +111,7 @@ const Page = () => {
           </Step>
         </Steps>
       </DocsContainer>
+      <ApiReference data={cpuArchitectureApiRefData} />
     </div>
   );
 };
