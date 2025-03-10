@@ -71,7 +71,7 @@ const ApiTableBody = ({ data = [] }: ApiTableBodyProps) => {
               <TooltipTrigger>
                 <CircleInfo className="mb-0.5 inline-block cursor-pointer" />
               </TooltipTrigger>
-              <TooltipContent>
+              <TooltipContent className="max-w-[300px]">
                 <p>{item.tip}</p>
               </TooltipContent>
             </Tooltip>

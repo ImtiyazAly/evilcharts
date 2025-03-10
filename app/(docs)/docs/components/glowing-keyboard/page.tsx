@@ -13,36 +13,50 @@ import {
   PreviewTab,
   CodePreviewTab,
 } from "@/components/docs/layout/code-preview/code-preview";
-import { CpuArchitecture } from "@/components/svg-components/cpu-architecture";
 import { CodeBlock } from "@/components/ui/code-block/code-block";
 import {
-  CPU_ARCHITECTURE_DEPENDENCIES,
-  CPU_ARCHITECTURE_SVG_FILE,
-  CPU_ARCHITECTURE_UTIL_FILE,
-  CPU_ARCHITECTURE_CSS_FILE,
-  CPU_ARCHITECTURE_BASIC_FILE,
+  GLOWING_KEYBOARD_DEPENDENCIES,
+  GLOWING_KEYBOARD_UTIL_FILE,
+  GLOWING_KEYBOARD_CSS_FILE,
+  GLOWING_KEYBOARD_SVG_FILE,
+  GLOWING_KEYBOARD_BASIC_FILE,
 } from "./snippets";
 import { Step, StepContent, Steps } from "@/components/ui/steps";
 import ApiReference from "@/components/docs/layout/api-reference-table/api-reference";
-import { cpuArchitectureApiRefData } from "@/constants/apiRefData/cpu-architecture";
+import GlowingKeyboard from "@/components/svg-components/glowing-keyboard";
+import { glowingKeyboardApiRefData } from "@/constants/apiRefData/glowing-keyboard";
 
 const Page = () => {
   return (
     <div className="page">
       <GenerateBreadcrumb />
       <DocsContainer>
-        <DocsTitle title="CPU Architecture" />
-        <DocsDescription>A simple CPU architecture animation</DocsDescription>
+        <DocsTitle title="Glowing Keyboard" />
+        <DocsDescription>Keyboard which glows on hover</DocsDescription>
       </DocsContainer>
       <CodePreviewTab>
         <PreviewTab>
-          <div className="p-4 rounded-xl bg-accent/20">
-            <CpuArchitecture />
+          <div className="p-4 rounded-xl bg-accent/20 flex sm:justify-end items-center overflow-hidden">
+            <GlowingKeyboard
+              glowColor="#FF2056"
+              highlight={[
+                {
+                  startRow: 2,
+                  startIndex: 1,
+                  text: ["F", "O", "L", "L", "O", "W", "", "M", "E"],
+                },
+                {
+                  startRow: 4,
+                  startIndex: 2,
+                  text: ["L", "E", "G", "I", "O", "N"],
+                },
+              ]}
+            />
           </div>
         </PreviewTab>
         <CodeTab>
           <CodeBlock
-            code={CPU_ARCHITECTURE_BASIC_FILE}
+            code={GLOWING_KEYBOARD_BASIC_FILE}
             language="tsx"
             title="page.tsx"
             clickToViewMore
@@ -57,7 +71,7 @@ const Page = () => {
               <DocsParagraph>
                 Install the dependencies for the CPU Architecture component.
               </DocsParagraph>
-              <CodeBlock code={CPU_ARCHITECTURE_DEPENDENCIES} language="bash" />
+              <CodeBlock code={GLOWING_KEYBOARD_DEPENDENCIES} language="bash" />
             </StepContent>
           </Step>
           <Step>
@@ -68,7 +82,7 @@ const Page = () => {
                 directory.
               </DocsParagraph>
               <CodeBlock
-                code={CPU_ARCHITECTURE_UTIL_FILE}
+                code={GLOWING_KEYBOARD_UTIL_FILE}
                 language="ts"
                 type="code"
                 title="utils.ts"
@@ -83,7 +97,7 @@ const Page = () => {
                 file.
               </DocsParagraph>
               <CodeBlock
-                code={CPU_ARCHITECTURE_CSS_FILE}
+                code={GLOWING_KEYBOARD_CSS_FILE}
                 language="css"
                 type="css"
                 title="globals.css"
@@ -97,22 +111,22 @@ const Page = () => {
               <DocsParagraph>
                 Add a{" "}
                 <DocsCodeBadge>
-                  components/svg-components/cpu-architecture.tsx
+                  components/svg-components/glowing-keyboard.tsx
                 </DocsCodeBadge>
                 component in your components directory.
               </DocsParagraph>
               <CodeBlock
-                code={CPU_ARCHITECTURE_SVG_FILE}
+                code={GLOWING_KEYBOARD_SVG_FILE}
                 language="tsx"
                 type="code"
-                title="cpu-architecture.tsx"
+                title="glowing-keyboard.tsx"
                 clickToViewMore
               />
             </StepContent>
           </Step>
         </Steps>
       </DocsContainer>
-      <ApiReference data={cpuArchitectureApiRefData} />
+      <ApiReference data={glowingKeyboardApiRefData} />
     </div>
   );
 };

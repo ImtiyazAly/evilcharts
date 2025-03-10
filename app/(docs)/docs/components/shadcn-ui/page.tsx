@@ -4,6 +4,7 @@ import {
   DocsCodeBadge,
   DocsContainer,
   DocsDescription,
+  DocsLink,
   DocsParagraph,
   DocsSubtitle,
   DocsTitle,
@@ -13,36 +14,39 @@ import {
   PreviewTab,
   CodePreviewTab,
 } from "@/components/docs/layout/code-preview/code-preview";
-import { CpuArchitecture } from "@/components/svg-components/cpu-architecture";
 import { CodeBlock } from "@/components/ui/code-block/code-block";
 import {
-  CPU_ARCHITECTURE_DEPENDENCIES,
-  CPU_ARCHITECTURE_SVG_FILE,
-  CPU_ARCHITECTURE_UTIL_FILE,
-  CPU_ARCHITECTURE_CSS_FILE,
-  CPU_ARCHITECTURE_BASIC_FILE,
+  SHADCN_UI_DEPENDENCIES,
+  SHADCN_UI_SVG_FILE,
+  SHADCN_UI_UTIL_FILE,
+  SHADCN_UI_CSS_FILE,
+  SHADCN_UI_BASIC_FILE,
+  SHADCN_UI_INSTALL_SHIMMER_TEXT,
 } from "./snippets";
 import { Step, StepContent, Steps } from "@/components/ui/steps";
 import ApiReference from "@/components/docs/layout/api-reference-table/api-reference";
-import { cpuArchitectureApiRefData } from "@/constants/apiRefData/cpu-architecture";
+import ShadCnUI from "@/components/svg-components/shadcn-ui";
+import { shadcnUiApiRefData } from "@/constants/apiRefData/shadcn-ui";
 
 const Page = () => {
   return (
     <div className="page">
       <GenerateBreadcrumb />
       <DocsContainer>
-        <DocsTitle title="CPU Architecture" />
-        <DocsDescription>A simple CPU architecture animation</DocsDescription>
+        <DocsTitle title="Shadcn UI" />
+        <DocsDescription>
+          Installation design inspired by shadcn tweet
+        </DocsDescription>
       </DocsContainer>
       <CodePreviewTab>
         <PreviewTab>
           <div className="p-4 rounded-xl bg-accent/20">
-            <CpuArchitecture />
+            <ShadCnUI />
           </div>
         </PreviewTab>
         <CodeTab>
           <CodeBlock
-            code={CPU_ARCHITECTURE_BASIC_FILE}
+            code={SHADCN_UI_BASIC_FILE}
             language="tsx"
             title="page.tsx"
             clickToViewMore
@@ -57,7 +61,7 @@ const Page = () => {
               <DocsParagraph>
                 Install the dependencies for the CPU Architecture component.
               </DocsParagraph>
-              <CodeBlock code={CPU_ARCHITECTURE_DEPENDENCIES} language="bash" />
+              <CodeBlock code={SHADCN_UI_DEPENDENCIES} language="bash" />
             </StepContent>
           </Step>
           <Step>
@@ -68,10 +72,29 @@ const Page = () => {
                 directory.
               </DocsParagraph>
               <CodeBlock
-                code={CPU_ARCHITECTURE_UTIL_FILE}
+                code={SHADCN_UI_UTIL_FILE}
                 language="ts"
                 type="code"
                 title="utils.ts"
+              />
+            </StepContent>
+          </Step>
+          <Step>
+            <DocsSubtitle title="Add Shimmer Text Animation" withoutLink />
+            <StepContent>
+              <DocsParagraph>
+                Install Shimmer component from{" "}
+                <DocsLink
+                  _blank
+                  href="https://motion-primitives.com/docs/text-shimmer"
+                >
+                  Motion Primitives
+                </DocsLink>
+              </DocsParagraph>
+              <CodeBlock
+                code={SHADCN_UI_INSTALL_SHIMMER_TEXT}
+                language="bash"
+                type="command"
               />
             </StepContent>
           </Step>
@@ -83,7 +106,7 @@ const Page = () => {
                 file.
               </DocsParagraph>
               <CodeBlock
-                code={CPU_ARCHITECTURE_CSS_FILE}
+                code={SHADCN_UI_CSS_FILE}
                 language="css"
                 type="css"
                 title="globals.css"
@@ -97,22 +120,22 @@ const Page = () => {
               <DocsParagraph>
                 Add a{" "}
                 <DocsCodeBadge>
-                  components/svg-components/cpu-architecture.tsx
+                  components/svg-components/shadcn-ui.tsx
                 </DocsCodeBadge>
                 component in your components directory.
               </DocsParagraph>
               <CodeBlock
-                code={CPU_ARCHITECTURE_SVG_FILE}
+                code={SHADCN_UI_SVG_FILE}
                 language="tsx"
                 type="code"
-                title="cpu-architecture.tsx"
+                title="shadcn-ui.tsx"
                 clickToViewMore
               />
             </StepContent>
           </Step>
         </Steps>
       </DocsContainer>
-      <ApiReference data={cpuArchitectureApiRefData} />
+      <ApiReference data={shadcnUiApiRefData} />
     </div>
   );
 };

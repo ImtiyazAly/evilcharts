@@ -125,6 +125,11 @@
   }
 }
 
+::selection {
+  background-color: #ff1f57;
+  color: #ffffff;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -168,7 +173,7 @@
 */
 
 .page {
-  @apply flex flex-col gap-4 max-w-[700px] mx-auto;
+  @apply flex flex-col gap-4 max-w-[740px] mx-auto;
 }
 
 pre {
@@ -247,6 +252,100 @@ code {
 }
 
 @keyframes animation-path {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+/* 
+===============================
+        Glowing Keyboard
+===============================
+*/
+
+.glowing-key {
+  box-shadow: 0px 0px 15px transparent;
+  border-color: currentColor !important;
+  animation: animate-key-border-shadow 1000ms linear forwards;
+}
+
+@keyframes animate-key-border-shadow {
+  0% {
+    box-shadow: 0px 0px 15px transparent;
+  }
+  100% {
+    box-shadow: 0px 0px 20px currentColor;
+  }
+}
+
+.blur-in {
+  animation: blur-in 400ms ease-in-out forwards;
+}
+
+@keyframes blur-in {
+  0% {
+    filter: blur(1px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+/* 
+===============================
+        Shadcn UI
+===============================
+*/
+
+.shadcn {
+  offset-anchor: 10px 0px;
+  animation: shadcn-animation-path;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.75, -0.01, 0, 0.99);
+  animation-duration: 4s;
+  animation-delay: 1.5s;
+}
+
+.shadcn-line-1 {
+  offset-path: path("M 35 14 h 25 q 5 0 5 5 v 23 q 0 5 5 5 h 25");
+}
+
+.shadcn-line-2 {
+  offset-path: path("M 30 50 h 65");
+}
+
+.shadcn-line-3 {
+  offset-path: path("M 36.3 87 h 24 q 5 0 5 -5 v -24 q 0 -5 5 -5 h 25");
+}
+
+.compBox {
+  animation: shadncn-animation-path-backwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.57, 0.02, 0, 1);
+  offset-path: path("M 167 36 h -17 q -5 0 -5 5 v 4 q 0 5 -5 5 h -32");
+  animation-duration: 4s;
+  opacity: 0;
+  animation-delay: 5s;
+}
+
+@keyframes shadncn-animation-path-backwards {
+  0% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+    offset-distance: 0%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shadcn-animation-path {
   0% {
     offset-distance: 0%;
   }

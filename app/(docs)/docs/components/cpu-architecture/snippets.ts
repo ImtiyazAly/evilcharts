@@ -7,6 +7,21 @@ export function cn(...inputs: ClassValue[]) {
 }
 `;
 
+export const CPU_ARCHITECTURE_BASIC_FILE = `"use client";
+
+import { CpuArchitecture } from "@/components/svg-components/cpu-architecture";
+
+const Page = () => {
+  return (
+    <div className="p-4 rounded-xl bg-accent/20">
+      <CpuArchitecture />
+    </div>
+  );
+};
+
+export default Page;
+`
+
 export const CPU_ARCHITECTURE_SVG_FILE = `import { cn } from "@/lib/utils";
 import React from "react";
 

@@ -31,19 +31,11 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
         },
         {
           title: "Glowing Keyboard",
-          url: "#",
-          badge: {
-            label: "Soon",
-            variant: "secondary",
-          },
+          url: "/docs/components/glowing-keyboard",
         },
         {
           title: "Shadcn UI",
-          url: "#",
-          badge: {
-            label: "Soon",
-            variant: "secondary",
-          },
+          url: "/docs/components/shadcn-ui",
         },
         {
           title: "Database With REST API",
