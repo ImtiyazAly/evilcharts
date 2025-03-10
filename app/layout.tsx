@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Doto, JetBrains_Mono, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import MicrosoftClarity from "@/providers/microsoft-clarity";
+import Analytics from "@/providers/analytics";
 
 const dotoFont = Doto({
   variable: "--font-doto",
@@ -42,6 +44,8 @@ export default function RootLayout({
           "antialiased dark instrument-sans"
         )}
       >
+        <MicrosoftClarity />
+        <Analytics />
         {children}
       </body>
     </html>
