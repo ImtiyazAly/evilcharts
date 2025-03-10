@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 `;
 
-export const SHADCN_UI_INSTALL_SHIMMER_TEXT = `npx shadcn@latest add text-shimmer`;
+export const SHADCN_UI_INSTALL_SHIMMER_TEXT = `npx motion-primitives@latest add text-shimmer`;
 
 export const SHADCN_UI_BASIC_FILE = `"use client";
 
@@ -26,7 +26,7 @@ export default Page;
 
 export const SHADCN_UI_SVG_FILE = `"use client";
 
-import { TextShimmer } from "@/components/ui/shimmer-text";
+import { TextShimmer } from "@/components/motion-primitives/text-shimmer";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 
