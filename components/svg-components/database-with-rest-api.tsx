@@ -10,7 +10,7 @@ const DatabaseWithRestApi = () => {
     <div className="relative flex h-[350px] w-full max-w-[500px] flex-col items-center">
       {/* SVG Paths  */}
       <svg
-        className="absolute h-full sm:w-full text-muted"
+        className="h-full sm:w-full text-muted"
         width="100%"
         height="100%"
         viewBox="0 0 200 100"
