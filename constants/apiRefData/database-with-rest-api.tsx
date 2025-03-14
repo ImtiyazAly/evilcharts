@@ -61,5 +61,6 @@ export const databaseWithRestApiApiRefData = [
     type: "string",
     typeColor: ApiTableBodyTypeColor.String,
     required: false,
+    default: "#00A6F5",
   },
 ] satisfies ApiTableBodyDataProps;
