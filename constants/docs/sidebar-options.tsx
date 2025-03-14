@@ -41,8 +41,8 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
           title: "Database With REST API",
           url: "#",
           badge: {
-            label: "Soon",
-            variant: "secondary",
+            label: "New",
+            variant: "rose",
           },
         },
       ],
