@@ -275,7 +275,7 @@ const DatabaseWithRestApi = ({
           {circleText ? circleText : "SVG"}
         </div>
         {/* box content */}
-        <div className="relative z-10 flex h-[150px] w-[350px] items-center justify-center overflow-hidden rounded-lg border bg-background shadow-md">
+        <div className="relative z-10 flex h-[150px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background shadow-md">
           {/* Badges */}
           <div className="absolute bottom-8 left-12 z-10 h-7 rounded-full bg-[#101112] px-3 text-xs border flex items-center gap-2 ">
             <HeartHandshakeIcon className="size-4" />

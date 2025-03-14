@@ -11,7 +11,9 @@ const DocsContainer = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return <div className={cn(className, "flex flex-col gap-2")}>{children}</div>;
+  return (
+    <div className={cn(className, "flex flex-col sm:gap-2")}>{children}</div>
+  );
 };
 
 const DocsSubContainer = ({
@@ -34,7 +36,7 @@ const DocsTitle = ({
   title: string;
 }) => {
   return (
-    <h2 id={title} className={cn(className, "text-3xl font-bold")}>
+    <h2 id={title} className={cn(className, "text-2xl sm:text-3xl font-bold")}>
       <a href={`#${title}`}>{title}</a>
     </h2>
   );
@@ -70,7 +72,9 @@ const DocsDescription = ({
   className?: string;
 }) => {
   return (
-    <p className={cn(className, "text-muted-foreground text-sm")}>{children}</p>
+    <p className={cn(className, "text-muted-foreground text-xs sm:text-sm")}>
+      {children}
+    </p>
   );
 };
 
