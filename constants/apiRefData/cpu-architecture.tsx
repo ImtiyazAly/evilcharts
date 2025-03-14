@@ -1,4 +1,4 @@
-import { ApiTableBodyTypeColor } from "@/components/docs/layout/api-reference-table/api-table";
+import { ApiTableBodyDataProps, ApiTableBodyTypeColor } from "@/components/docs/layout/api-reference-table/api-table";
 
 export const cpuArchitectureApiRefData = [
   {
@@ -72,4 +72,4 @@ export const cpuArchitectureApiRefData = [
     required: false,
     default: "true",
   },
-];
+] satisfies ApiTableBodyDataProps;

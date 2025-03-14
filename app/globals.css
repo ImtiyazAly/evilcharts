@@ -176,6 +176,10 @@
   @apply flex flex-col gap-4 max-w-[740px] mx-auto;
 }
 
+.sparkles-bg {
+  background: url(https://i.ibb.co/qLmc4T33/U0hpDMb.gif);
+}
+
 pre {
   padding: 10px;
   overflow-x: scroll;
@@ -346,7 +350,7 @@ code {
 
 .database {
   offset-anchor: 10px 0px;
-  animation: animation-path;
+  animation: database-animation-path;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   animation-duration: 4s;
@@ -367,4 +371,13 @@ code {
 
 .db-light-4 {
   offset-path: path("M 170 10 v 15 q 0 5 -5 5 h -60 q -5 0 -5 5 v 25");
+}
+
+@keyframes database-animation-path {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
 }

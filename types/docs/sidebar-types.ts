@@ -3,6 +3,7 @@ import { BadgeVariants } from "@/components/ui/badge";
 interface SidebarBadgeProps {
   label: string;
   variant: BadgeVariants;
+  sparkles?: boolean;
 }
 
 interface SidebarItemProps {

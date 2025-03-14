@@ -69,7 +69,7 @@ const Page = () => {
             <DocsSubtitle title="Install Dependencies" withoutLink />
             <StepContent>
               <DocsParagraph>
-                Install the dependencies for the CPU Architecture component.
+                Install the dependencies for the Glowing Keyboard component.
               </DocsParagraph>
               <CodeBlock code={GLOWING_KEYBOARD_DEPENDENCIES} language="bash" />
             </StepContent>

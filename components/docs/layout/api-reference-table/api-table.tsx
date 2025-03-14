@@ -15,6 +15,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Badge, BadgeVariants } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 const ApiTable = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -44,7 +45,9 @@ export interface ApiTableBodyProps {
     required: boolean;
     type: string;
     typeColor?: BadgeVariants;
+    typeTooltip?: string;
     default?: string | undefined;
+    defaultTooltip?: string;
   }[];
 }
 
@@ -77,7 +80,26 @@ const ApiTableBody = ({ data = [] }: ApiTableBodyProps) => {
             </Tooltip>
           </TableCell>
           <TableCell>
-            <Badge variant="blue">{item.type}</Badge>
+            <Badge className="mr-1" variant="blue">
+              {item.type}
+            </Badge>
+            {item.typeTooltip && (
+              <Tooltip>
+                <TooltipTrigger>
+                  <CircleInfo className="mb-0.5 inline-block cursor-pointer" />
+                </TooltipTrigger>
+                <TooltipContent className="max-w-[300px]">
+                  <p
+                    className={cn(
+                      item.type === "object" && "jetbrains",
+                      "text-xs"
+                    )}
+                  >
+                    {item.typeTooltip}
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            )}
           </TableCell>
           <TableCell>
             <Badge variant={item.required ? "green" : "red"}>
@@ -85,7 +107,24 @@ const ApiTableBody = ({ data = [] }: ApiTableBodyProps) => {
             </Badge>
           </TableCell>
           <TableCell className="text-right">
-            {item.default ? item.default : "-"}
+            <span className="mr-1.5">{item.default ? item.default : "-"}</span>
+            {item.defaultTooltip && (
+              <Tooltip>
+                <TooltipTrigger>
+                  <CircleInfo className="mb-0.5 inline-block cursor-pointer" />
+                </TooltipTrigger>
+                <TooltipContent className="max-w-[300px]">
+                  <p
+                    className={cn(
+                      item.type === "object" && "jetbrains",
+                      "text-xs"
+                    )}
+                  >
+                    {item.defaultTooltip}
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            )}
           </TableCell>
         </TableRow>
       ))}

@@ -1,4 +1,7 @@
-import { ApiTableBodyTypeColor } from "@/components/docs/layout/api-reference-table/api-table";
+import {
+  ApiTableBodyDataProps,
+  ApiTableBodyTypeColor,
+} from "@/components/docs/layout/api-reference-table/api-table";
 
 export const shadcnUiApiRefData = [
   {
@@ -64,4 +67,4 @@ export const shadcnUiApiRefData = [
     required: false,
     default: "Your App",
   },
-];
+] satisfies ApiTableBodyDataProps;

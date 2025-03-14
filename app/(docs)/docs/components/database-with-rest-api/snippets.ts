@@ -1,9 +1,34 @@
-"use client";
+export const DATABASE_WITH_REST_API_DEPENDENCIES = `npm i clsx tailwind-merge motion lucide-react`;
+export const DATABASE_WITH_REST_API_UTIL_FILE = `import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+`;
+
+export const DATABASE_WITH_REST_API_BASIC_FILE = `"use client";
+
+import DatabaseWithRestApi from "@/components/svg-components/database-with-rest-api";
+
+const Page = () => {
+  return (
+    <div className="p-4 rounded-xl bg-accent/20 w-full">
+      <DatabaseWithRestApi />
+    </div>
+  );
+};
+
+export default Page;
+`;
+
+export const DATABASE_WITH_REST_API_SVG_FILE = `"use client";
 
 import React from "react";
 import { motion } from "motion/react";
 import { Folder, HeartHandshakeIcon, SparklesIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+
 interface DatabaseWithRestApiProps {
   className?: string;
   circleText?: string;
@@ -318,3 +343,38 @@ const DatabaseIcon = ({ x = "0", y = "0" }: { x: string; y: string }) => {
     </svg>
   );
 };
+`;
+
+export const DATABASE_WITH_REST_API_CSS_FILE = `.database {
+  offset-anchor: 10px 0px;
+  animation: database-animation-path;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.db-light-1 {
+  offset-path: path("M 31 10 v 15 q 0 5 5 5 h 59 q 5 0 5 5 v 25");
+}
+
+.db-light-2 {
+  offset-path: path("M 77 10 v 10 q 0 5 5 5 h 13 q 5 0 5 5 v 25");
+}
+
+.db-light-3 {
+  offset-path: path("M 124 10 v 10 q 0 5 -5 5 h -14 q -5 0 -5 5 v 25");
+}
+
+.db-light-4 {
+  offset-path: path("M 170 10 v 15 q 0 5 -5 5 h -60 q -5 0 -5 5 v 25");
+}
+
+@keyframes database-animation-path {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}`;

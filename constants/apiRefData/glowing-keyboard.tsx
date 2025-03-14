@@ -1,4 +1,7 @@
-import { ApiTableBodyTypeColor } from "@/components/docs/layout/api-reference-table/api-table";
+import {
+  ApiTableBodyDataProps,
+  ApiTableBodyTypeColor,
+} from "@/components/docs/layout/api-reference-table/api-table";
 
 export const glowingKeyboardApiRefData = [
   {
@@ -40,4 +43,4 @@ export const glowingKeyboardApiRefData = [
     typeColor: ApiTableBodyTypeColor.Object,
     required: true,
   },
-];
+] satisfies ApiTableBodyDataProps;

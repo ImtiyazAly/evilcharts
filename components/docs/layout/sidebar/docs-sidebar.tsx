@@ -17,6 +17,7 @@ import DocsSidebarHeader from "./sidebar-header";
 import Link from "next/link";
 import { SidebarOptionsProps } from "@/types/docs/sidebar-types";
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 export function DocsSidebar({
   ...props
@@ -51,7 +52,13 @@ export function DocsSidebar({
                         <span>{item.title}</span>
                         {item.badge && (
                           <Badge variant={item.badge.variant}>
-                            {item.badge.label}
+                            <span
+                              className={cn(
+                                item.badge.sparkles && "sparkles-bg"
+                              )}
+                            >
+                              {item.badge.label}
+                            </span>
                           </Badge>
                         )}
                       </Link>
@@ -79,11 +86,14 @@ export function DocsSidebar({
                         {item.icon}
                         <span>{item.title}</span>
                         {item.badge && (
-                          <Badge
-                            className="text-[10px] h-4"
-                            variant={item.badge.variant}
-                          >
-                            {item.badge.label}
+                          <Badge variant={item.badge.variant}>
+                            <span
+                              className={cn(
+                                item.badge.sparkles && "sparkles-bg"
+                              )}
+                            >
+                              {item.badge.label}
+                            </span>
                           </Badge>
                         )}
                       </Link>

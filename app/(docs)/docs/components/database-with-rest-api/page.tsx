@@ -4,7 +4,6 @@ import {
   DocsCodeBadge,
   DocsContainer,
   DocsDescription,
-  DocsLink,
   DocsParagraph,
   DocsSubtitle,
   DocsTitle,
@@ -16,37 +15,36 @@ import {
 } from "@/components/docs/layout/code-preview/code-preview";
 import { CodeBlock } from "@/components/ui/code-block/code-block";
 import {
-  SHADCN_UI_DEPENDENCIES,
-  SHADCN_UI_SVG_FILE,
-  SHADCN_UI_UTIL_FILE,
-  SHADCN_UI_CSS_FILE,
-  SHADCN_UI_BASIC_FILE,
-  SHADCN_UI_INSTALL_SHIMMER_TEXT,
+  DATABASE_WITH_REST_API_DEPENDENCIES,
+  DATABASE_WITH_REST_API_SVG_FILE,
+  DATABASE_WITH_REST_API_CSS_FILE,
+  DATABASE_WITH_REST_API_UTIL_FILE,
+  DATABASE_WITH_REST_API_BASIC_FILE,
 } from "./snippets";
 import { Step, StepContent, Steps } from "@/components/ui/steps";
 import ApiReference from "@/components/docs/layout/api-reference-table/api-reference";
-import ShadCnUI from "@/components/svg-components/shadcn-ui";
-import { shadcnUiApiRefData } from "@/constants/apiRefData/shadcn-ui";
+import DatabaseWithRestApi from "@/components/svg-components/database-with-rest-api";
+import { databaseWithRestApiApiRefData } from "@/constants/apiRefData/database-with-rest-api";
 
 const Page = () => {
   return (
     <div className="page">
       <GenerateBreadcrumb />
       <DocsContainer>
-        <DocsTitle title="Shadcn UI" />
+        <DocsTitle title="Database With REST API" />
         <DocsDescription>
-          Installation design inspired by shadcn tweet
+          Presentation of a Database with a REST API
         </DocsDescription>
       </DocsContainer>
       <CodePreviewTab>
         <PreviewTab>
-          <div className="p-4 rounded-xl bg-accent/20">
-            <ShadCnUI />
+          <div className="p-4 rounded-xl bg-accent/20 grid place-items-center">
+            <DatabaseWithRestApi />
           </div>
         </PreviewTab>
         <CodeTab>
           <CodeBlock
-            code={SHADCN_UI_BASIC_FILE}
+            code={DATABASE_WITH_REST_API_BASIC_FILE}
             language="tsx"
             title="page.tsx"
             clickToViewMore
@@ -59,9 +57,13 @@ const Page = () => {
             <DocsSubtitle title="Install Dependencies" withoutLink />
             <StepContent>
               <DocsParagraph>
-                Install the dependencies for the Shadcn UI component.
+                Install the dependencies for the Database With REST API
+                component.
               </DocsParagraph>
-              <CodeBlock code={SHADCN_UI_DEPENDENCIES} language="bash" />
+              <CodeBlock
+                code={DATABASE_WITH_REST_API_DEPENDENCIES}
+                language="bash"
+              />
             </StepContent>
           </Step>
           <Step>
@@ -72,29 +74,10 @@ const Page = () => {
                 directory.
               </DocsParagraph>
               <CodeBlock
-                code={SHADCN_UI_UTIL_FILE}
+                code={DATABASE_WITH_REST_API_UTIL_FILE}
                 language="ts"
                 type="code"
                 title="utils.ts"
-              />
-            </StepContent>
-          </Step>
-          <Step>
-            <DocsSubtitle title="Add Shimmer Text Animation" withoutLink />
-            <StepContent>
-              <DocsParagraph>
-                Install Shimmer component from{" "}
-                <DocsLink
-                  _blank
-                  href="https://motion-primitives.com/docs/text-shimmer"
-                >
-                  Motion Primitives
-                </DocsLink>
-              </DocsParagraph>
-              <CodeBlock
-                code={SHADCN_UI_INSTALL_SHIMMER_TEXT}
-                language="bash"
-                type="command"
               />
             </StepContent>
           </Step>
@@ -106,7 +89,7 @@ const Page = () => {
                 file.
               </DocsParagraph>
               <CodeBlock
-                code={SHADCN_UI_CSS_FILE}
+                code={DATABASE_WITH_REST_API_CSS_FILE}
                 language="css"
                 type="css"
                 title="globals.css"
@@ -125,7 +108,7 @@ const Page = () => {
                 component in your components directory.
               </DocsParagraph>
               <CodeBlock
-                code={SHADCN_UI_SVG_FILE}
+                code={DATABASE_WITH_REST_API_SVG_FILE}
                 language="tsx"
                 type="code"
                 title="shadcn-ui.tsx"
@@ -135,7 +118,7 @@ const Page = () => {
           </Step>
         </Steps>
       </DocsContainer>
-      <ApiReference data={shadcnUiApiRefData} />
+      <ApiReference data={databaseWithRestApiApiRefData} />
     </div>
   );
 };

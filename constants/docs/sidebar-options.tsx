@@ -39,10 +39,11 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
         },
         {
           title: "Database With REST API",
-          url: "#",
+          url: "/docs/components/database-with-rest-api",
           badge: {
             label: "New",
             variant: "rose",
+            sparkles: true,
           },
         },
       ],
