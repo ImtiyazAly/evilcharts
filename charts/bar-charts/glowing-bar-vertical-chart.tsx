@@ -33,15 +33,11 @@ export const description = "A bar chart";
 const chartData = [
   { month: "January", desktop: 342, mobile: 245, tablet: 123 },
   { month: "February", desktop: 876, mobile: 654, tablet: 234 },
-  { month: "March", desktop: 512, mobile: 387, tablet: 156 },
   { month: "April", desktop: 629, mobile: 521, tablet: 267 },
-  { month: "May", desktop: 458, mobile: 412, tablet: 213 },
   { month: "June", desktop: 781, mobile: 598, tablet: 321 },
   { month: "July", desktop: 394, mobile: 312, tablet: 145 },
-  { month: "August", desktop: 925, mobile: 743, tablet: 150 },
   { month: "September", desktop: 647, mobile: 489, tablet: 212 },
   { month: "October", desktop: 532, mobile: 476, tablet: 187 },
-  { month: "November", desktop: 803, mobile: 687, tablet: 298 },
   { month: "December", desktop: 271, mobile: 198, tablet: 123 },
 ];
 
