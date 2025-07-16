@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import MicrosoftClarity from "@/providers/microsoft-clarity";
 import Analytics from "@/providers/analytics";
+import { ThemeProvider } from "next-themes";
 
 const dotoFont = Doto({
   variable: "--font-doto",
@@ -24,9 +25,6 @@ export const metadata: Metadata = {
   title: "Evil Charts | Beautiful Charts",
   description:
     "Evil Charts is a library of beautiful charts components that are easy to use and customize. It is built with Tailwind CSS and React. Built on top of shadcn/recharts.",
-  openGraph: {
-    images: ["/banner.png"],
-  },
 };
 
 export default function RootLayout({
@@ -35,18 +33,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           dotoFont.variable,
           jetbrainsMonoFont.variable,
           instrumentSansFont.variable,
-          "antialiased dark instrument-sans"
+          "antialiased instrument-sans"
         )}
       >
-        <MicrosoftClarity />
-        <Analytics />
-        {children}
+        <ThemeProvider defaultTheme="system" attribute="class">
+          <MicrosoftClarity />
+          <Analytics />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

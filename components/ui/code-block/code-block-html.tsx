@@ -33,7 +33,7 @@ const CodeBlockHtml = ({
       <div
         className={cn(
           clickToViewMore && !isHidden ? "max-h-[400px]" : "max-h-auto",
-          "text-sm overflow-y-hidden rounded-b-[14px] duration-300 [&_pre]:!bg-white/7"
+          "text-sm overflow-y-hidden rounded-b-[14px] duration-300 dark:[&_pre]:!bg-white/7 [&_pre]:!bg-white"
         )}
         dangerouslySetInnerHTML={{ __html: html }}
       />

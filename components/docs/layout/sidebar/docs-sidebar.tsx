@@ -51,7 +51,7 @@ export function DocsSidebar({
                         className={cn(
                           "border border-transparent",
                           isActive &&
-                            "shadow-[inset_0px_0px_0px_1px_#000] border"
+                            "shadow-[inset_0px_0px_0px_1px_#fff] dark:shadow-[inset_0px_0px_0px_1px_#000] border"
                         )}
                       >
                         <Link href={item.url}>
@@ -94,7 +94,7 @@ export function DocsSidebar({
                         className={cn(
                           "border border-transparent",
                           isActive &&
-                            "shadow-[inset_0px_0px_0px_1px_#000] border"
+                            "shadow-[inset_0px_0px_0px_1px_#fff] dark:shadow-[inset_0px_0px_0px_1px_#000] border"
                         )}
                       >
                         <Link href={item.url}>

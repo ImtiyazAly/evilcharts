@@ -24,11 +24,11 @@ const CodeBlock = async ({
 }: CodeBlockProps) => {
   const html = await codeToHtml(code, {
     lang: language,
-    theme: "github-dark",
+    theme: "one-dark-pro",
   });
 
   return (
-    <div className="bg-border/40 p-1 rounded-[14px] group shadow">
+    <div className="bg-border/40 p-1 rounded-[14px] group dark:shadow-md">
       <div className="pb-2 py-1 px-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {getCodeBlockIcon(type)}
