@@ -22,31 +22,9 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
   ],
   components: [
     {
-      title: "Components",
+      title: "Charts",
       url: "#",
-      items: [
-        {
-          title: "CPU Architecture",
-          url: "/docs/components/cpu-architecture",
-        },
-        {
-          title: "Glowing Keyboard",
-          url: "/docs/components/glowing-keyboard",
-        },
-        {
-          title: "Shadcn UI",
-          url: "/docs/components/shadcn-ui",
-        },
-        {
-          title: "Database With REST API",
-          url: "/docs/components/database-with-rest-api",
-          badge: {
-            label: "New",
-            variant: "rose",
-            sparkles: true,
-          },
-        },
-      ],
+      items: [],
     },
   ],
 };

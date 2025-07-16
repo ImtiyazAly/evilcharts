@@ -28,9 +28,13 @@ const Page = () => {
       </DocsContainer>
       <Steps>
         <InstallNextJsStep />
-        <InstallTailwindCssStep />
         <InstallShadcnUiStep />
       </Steps>
+      <DocsContainer>
+        <DocsDescription>
+          That&apos;s all you need to get started.
+        </DocsDescription>
+      </DocsContainer>
     </div>
   );
 };
@@ -65,30 +69,6 @@ const InstallNextJsStep = () => {
         <DocsParagraph>
           Once you&apos;ve answered the prompts, a new project will be created
           with your chosen configuration.
-        </DocsParagraph>
-      </StepContent>
-    </Step>
-  );
-};
-
-const InstallTailwindCssStep = () => {
-  return (
-    <Step>
-      <DocsSubtitle title="Install TailwindCSS" withoutLink />
-      <StepContent>
-        <DocsParagraph>
-          Configure Tailwind CSS on your nextjs project{" "}
-          <DocsLink href={CODE_DOCS_LINKS.INSTALL_TAILWIND_CSS} _blank>
-            Tailwind Docs
-          </DocsLink>
-        </DocsParagraph>
-        <CodeBlock
-          language={CODE_SNIPPETS.CONFIGURE_TAILWIND_CSS.language}
-          code={CODE_SNIPPETS.CONFIGURE_TAILWIND_CSS.code}
-        />
-        <DocsParagraph>
-          Select v4 / v3 version of Tailwind CSS according to your project
-          requirements.
         </DocsParagraph>
       </StepContent>
     </Step>

@@ -1,5 +1,5 @@
 import LinkIcon from "@/assets/svgs/LinkIcon";
-import { Button } from "@/components/ui/border-button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";

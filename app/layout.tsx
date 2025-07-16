@@ -21,9 +21,9 @@ const instrumentSansFont = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SVG UI | Animated SVG Components",
+  title: "Evil Charts | Beautiful Charts",
   description:
-    "SVG UI is a library of animated SVG components that are easy to use and customize. It is built with Tailwind CSS and React.",
+    "Evil Charts is a library of beautiful charts components that are easy to use and customize. It is built with Tailwind CSS and React. Built on top of shadcn/recharts.",
   openGraph: {
     images: ["/banner.png"],
   },

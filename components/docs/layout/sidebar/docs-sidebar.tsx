@@ -39,32 +39,40 @@ export function DocsSidebar({
             <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                {item.items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton
-                      asChild
-                      isActive={
-                        getActiveItem(SIDEBAR_OPTIONS)?.url === item.url
-                      }
-                    >
-                      <Link href={item.url}>
-                        {item.icon}
-                        <span>{item.title}</span>
-                        {item.badge && (
-                          <Badge variant={item.badge.variant}>
-                            <span
-                              className={cn(
-                                item.badge.sparkles && "sparkles-bg"
-                              )}
-                            >
-                              {item.badge.label}
-                            </span>
-                          </Badge>
+                {item.items.map((item) => {
+                  const isActive =
+                    getActiveItem(SIDEBAR_OPTIONS)?.url === item.url;
+
+                  return (
+                    <SidebarMenuItem key={item.title}>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={isActive}
+                        className={cn(
+                          "border border-transparent",
+                          isActive &&
+                            "shadow-[inset_0px_0px_0px_1px_#000] border"
                         )}
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
+                      >
+                        <Link href={item.url}>
+                          {item.icon}
+                          <span>{item.title}</span>
+                          {item.badge && (
+                            <Badge variant={item.badge.variant}>
+                              <span
+                                className={cn(
+                                  item.badge.sparkles && "sparkles-bg"
+                                )}
+                              >
+                                {item.badge.label}
+                              </span>
+                            </Badge>
+                          )}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                })}
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
@@ -74,32 +82,34 @@ export function DocsSidebar({
             <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                {item.items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton
-                      asChild
-                      isActive={
-                        getActiveItem(SIDEBAR_OPTIONS)?.url === item.url
-                      }
-                    >
-                      <Link href={item.url}>
-                        {item.icon}
-                        <span>{item.title}</span>
-                        {item.badge && (
-                          <Badge variant={item.badge.variant}>
-                            <span
-                              className={cn(
-                                item.badge.sparkles && "sparkles-bg"
-                              )}
-                            >
-                              {item.badge.label}
-                            </span>
-                          </Badge>
+                {item.items.map((item) => {
+                  const isActive =
+                    getActiveItem(SIDEBAR_OPTIONS)?.url === item.url;
+
+                  return (
+                    <SidebarMenuItem key={item.title}>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={isActive}
+                        className={cn(
+                          "border border-transparent",
+                          isActive &&
+                            "shadow-[inset_0px_0px_0px_1px_#000] border"
                         )}
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
+                      >
+                        <Link href={item.url}>
+                          {item.icon}
+                          <span>{item.title}</span>
+                          {item.badge && (
+                            <Badge variant={item.badge.variant}>
+                              <span className="">{item.badge.label}</span>
+                            </Badge>
+                          )}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                })}
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
