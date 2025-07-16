@@ -45,7 +45,7 @@ export function GenerateBreadcrumb({
                 <BreadcrumbItem
                   key={path}
                   className={cn(
-                    "line-clamp-1 capitalize duration-300 hover:text-white sm:max-w-full text-xs"
+                    "line-clamp-1 capitalize duration-300 dark:hover:text-white sm:max-w-full text-xs"
                   )}
                 >
                   {last}
@@ -70,8 +70,9 @@ export function GenerateBreadcrumb({
               </BreadcrumbSeparator>
               <BreadcrumbItem
                 className={cn(
-                  "line-clamp-1 capitalize duration-300 hover:text-white sm:max-w-full text-xs",
-                  index === pathname.split("/").length - 1 && `text-white`
+                  "line-clamp-1 capitalize duration-300 dark:hover:text-white sm:max-w-full text-xs",
+                  index === pathname.split("/").length - 1 &&
+                    `dark:text-white text-black font-semibold`
                 )}
               >
                 {path}

@@ -27,7 +27,7 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
       items: [
         {
           title: "Bar Chart",
-          url: "/docs/bar-chart",
+          url: "/docs/bar-charts",
           icon: <BarChart />,
         },
       ],
