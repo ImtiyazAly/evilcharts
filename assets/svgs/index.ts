@@ -9,3 +9,4 @@ export { default as SquareCode } from "./SquareCode";
 export { default as CodeEditor } from "./CodeEditor";
 export { default as ImageBinary } from "./ImageBinary";
 export { default as CircleInfo } from "./CircleInfo";
+export { default as BarChart } from "./BarChart";

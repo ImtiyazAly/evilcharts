@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -115,6 +116,21 @@ export function DocsSidebar({
           </SidebarGroup>
         ))}
       </SidebarContent>
+      <SidebarFooter>
+        <SidebarMenuButton
+          variant="outline"
+          className="border border-dashed flex justify-center text-xs"
+          asChild
+        >
+          <Link
+            href="https://x.com/LegionWebDev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            + Request Chart
+          </Link>
+        </SidebarMenuButton>
+      </SidebarFooter>
     </Sidebar>
   );
 }

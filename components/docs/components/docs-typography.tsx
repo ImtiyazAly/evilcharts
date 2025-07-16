@@ -12,7 +12,7 @@ const DocsContainer = ({
   className?: string;
 }) => {
   return (
-    <div className={cn(className, "flex flex-col sm:gap-2")}>{children}</div>
+    <div className={cn(className, "flex flex-col sm:gap-1")}>{children}</div>
   );
 };
 
@@ -23,9 +23,7 @@ const DocsSubContainer = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return (
-    <div className={cn(className, "flex flex-col gap-2 mt-4")}>{children}</div>
-  );
+  return <div className={cn(className, "flex flex-col mt-4")}>{children}</div>;
 };
 
 const DocsTitle = ({
@@ -56,7 +54,7 @@ const DocsSubtitle = ({
       id={title}
       className={cn(
         className,
-        "text-xl font-semibold [&:not(:first-child)]:mt-2"
+        "text-lg font-medium [&:not(:first-child)]:mt-2"
       )}
     >
       {withoutLink ? title : <a href={`#${title}`}>{title}</a>}
@@ -73,6 +71,25 @@ const DocsDescription = ({
 }) => {
   return (
     <p className={cn(className, "text-muted-foreground text-xs sm:text-sm")}>
+      {children}
+    </p>
+  );
+};
+
+const DocsSubDescription = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <p
+      className={cn(
+        className,
+        "text-muted-foreground/70 text-xs sm:text-[13px] font-light"
+      )}
+    >
       {children}
     </p>
   );
@@ -163,6 +180,7 @@ export {
   DocsContainer,
   DocsTitle,
   DocsSubtitle,
+  DocsSubDescription,
   DocsParagraph,
   DocsContainerLinks,
   DocsDescription,
