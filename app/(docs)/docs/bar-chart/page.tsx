@@ -43,10 +43,10 @@ const Page = () => {
       </DocsSubContainer>
       <DisplayChartContainer>
         <ChartDisplay name="Bar Chart" code={`console.log()`}>
-          <DefaultBarChart />
+          <DefaultBarChart key="default-bar-chart" />
         </ChartDisplay>
         <ChartDisplay name="Multiple Bar Chart" code={``}>
-          <DefaultMultipleBarChart />
+          <DefaultMultipleBarChart key="default-multiple-bar-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
       {/* Hatched Bar Chart  */}
@@ -56,10 +56,10 @@ const Page = () => {
       </DocsSubContainer>
       <DisplayChartContainer>
         <ChartDisplay name="Bar Chart" code={`console.log()`}>
-          <HatchedBarChart />
+          <HatchedBarChart key="hatched-bar-chart" />
         </ChartDisplay>
         <ChartDisplay name="Multiple Bar Chart" code={`console.log()`}>
-          <HatchedBarMultipleChart />
+          <HatchedBarMultipleChart key="hatched-bar-multiple-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
       {/* Highlighted Bar Chart  */}
@@ -72,10 +72,10 @@ const Page = () => {
       </DocsSubContainer>
       <DisplayChartContainer>
         <ChartDisplay name="Bar Chart" code={`console.log()`}>
-          <HighlightedBarChart />
+          <HighlightedBarChart key="highlighted-bar-chart" />
         </ChartDisplay>
         <ChartDisplay name="Multiple Bar Chart" code={`console.log()`}>
-          <HighlightedMultipleBarChart />
+          <HighlightedMultipleBarChart key="highlighted-multiple-bar-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
       {/* Duotone Bar Chart  */}
@@ -85,10 +85,10 @@ const Page = () => {
       </DocsSubContainer>
       <DisplayChartContainer>
         <ChartDisplay name="Bar Chart" code={`console.log()`}>
-          <DuotoneBarChart />
+          <DuotoneBarChart key="duotone-bar-chart" />
         </ChartDisplay>
         <ChartDisplay name="Multiple Bar Chart" code={`console.log()`}>
-          <DuotoneBarMultipleChart />
+          <DuotoneBarMultipleChart key="duotone-bar-multiple-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
       {/* Gradient Bar Chart  */}
@@ -98,10 +98,10 @@ const Page = () => {
       </DocsSubContainer>
       <DisplayChartContainer>
         <ChartDisplay name="Bar Chart" code={`console.log()`}>
-          <GradientBarChart />
+          <GradientBarChart key="gradient-bar-chart" />
         </ChartDisplay>
         <ChartDisplay name="Multiple Bar Chart" code={`console.log()`}>
-          <GradientBarMultipleChart />
+          <GradientBarMultipleChart key="gradient-bar-multiple-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
       {/* Glowing Bar Chart  */}
@@ -111,10 +111,10 @@ const Page = () => {
       </DocsSubContainer>
       <DisplayChartContainer count={2}>
         <ChartDisplay name="Horizontal Bar Chart" code={`console.log()`}>
-          <GlowingBarChart />
+          <GlowingBarChart key="glowing-bar-chart" />
         </ChartDisplay>
         <ChartDisplay name="Vertical Bar Chart" code={`console.log()`}>
-          <GlowingBarVerticalChart />
+          <GlowingBarVerticalChart key="glowing-bar-vertical-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
     </div>
