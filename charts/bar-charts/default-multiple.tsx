@@ -18,8 +18,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { TrendingDown } from "lucide-react";
 
-export const description = "A multiple bar chart";
-
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
   { month: "February", desktop: 305, mobile: 200 },

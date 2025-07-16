@@ -2,6 +2,8 @@ import { DefaultBarChart } from "@/charts/bar-charts/default";
 import { DefaultMultipleBarChart } from "@/charts/bar-charts/default-multiple";
 import { DuotoneBarChart } from "@/charts/bar-charts/duotone-bar-chart";
 import { DuotoneBarMultipleChart } from "@/charts/bar-charts/duotone-bar-multiple-chart";
+import { GlowingBarChart } from "@/charts/bar-charts/glowing-bar-chart";
+import { GlowingBarVerticalChart } from "@/charts/bar-charts/glowing-bar-verticle-chart";
 import { GradientBarChart } from "@/charts/bar-charts/gradient-bar-chart";
 import { GradientBarMultipleChart } from "@/charts/bar-charts/gradient-bar-multiple-chart";
 import { HatchedBarChart } from "@/charts/bar-charts/hatched-bar-chart";
@@ -100,6 +102,19 @@ const Page = () => {
         </ChartDisplay>
         <ChartDisplay name="Multiple Bar Chart" code={`console.log()`}>
           <GradientBarMultipleChart />
+        </ChartDisplay>
+      </DisplayChartContainer>
+      {/* Glowing Bar Chart  */}
+      <DocsSubContainer>
+        <DocsSubtitle title="Glowing Bars" />
+        <DocsSubDescription>A bar chart with glowing bars.</DocsSubDescription>
+      </DocsSubContainer>
+      <DisplayChartContainer count={2}>
+        <ChartDisplay name="Horizontal Bar Chart" code={`console.log()`}>
+          <GlowingBarChart />
+        </ChartDisplay>
+        <ChartDisplay name="Vertical Bar Chart" code={`console.log()`}>
+          <GlowingBarVerticalChart />
         </ChartDisplay>
       </DisplayChartContainer>
     </div>

@@ -17,8 +17,6 @@ import {
 } from "@/components/ui/chart";
 import { Badge } from "@/components/ui/badge";
 
-export const description = "A bar chart";
-
 const chartData = [
   { month: "January", desktop: 342 },
   { month: "February", desktop: 876 },
@@ -121,7 +119,7 @@ const CustomHatchedBar = (
           patternUnits="userSpaceOnUse"
           patternTransform="rotate(-45)"
         >
-          <rect width="10" height="10" opacity={0.2} fill={fill}></rect>
+          <rect width="10" height="10" opacity={0.5} fill={fill}></rect>
           <rect width="1" height="10" fill={fill}></rect>
         </pattern>
       </defs>

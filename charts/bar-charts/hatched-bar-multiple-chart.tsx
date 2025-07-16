@@ -18,8 +18,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { TrendingDown } from "lucide-react";
 
-export const description = "A multiple bar chart";
-
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
   { month: "February", desktop: 305, mobile: 200 },
@@ -45,7 +43,7 @@ export function HatchedBarMultipleChart() {
     <Card>
       <CardHeader>
         <CardTitle>
-          Bar Chart - Multiple{" "}
+          Bar Chart - Multiple
           <Badge
             variant="outline"
             className="text-red-500 bg-red-500/10 border-none ml-2"
@@ -84,7 +82,7 @@ export function HatchedBarMultipleChart() {
               dataKey="desktop"
               color="var(--chart-1)"
               fill="var(--color-desktop)"
-              shape={<CustomHatchedBar />}
+              shape={<CustomHatchedBar isHatched={false} />}
               radius={4}
             />
             <Bar
@@ -101,9 +99,14 @@ export function HatchedBarMultipleChart() {
 }
 
 const CustomHatchedBar = (
-  props: React.SVGProps<SVGRectElement> & { dataKey?: string }
+  props: React.SVGProps<SVGRectElement> & {
+    dataKey?: string;
+    isHatched?: boolean;
+  }
 ) => {
   const { fill, x, y, width, height, dataKey } = props;
+
+  const isHatched = props.isHatched ?? true;
 
   return (
     <>
@@ -114,7 +117,7 @@ const CustomHatchedBar = (
         width={width}
         height={height}
         stroke="none"
-        fill={`url(#hatched-bar-pattern-${dataKey})`}
+        fill={isHatched ? `url(#hatched-bar-pattern-${dataKey})` : fill}
       />
       <defs>
         <pattern
@@ -127,7 +130,7 @@ const CustomHatchedBar = (
           patternUnits="userSpaceOnUse"
           patternTransform="rotate(-45)"
         >
-          <rect width="10" height="10" opacity={0.2} fill={fill}></rect>
+          <rect width="10" height="10" opacity={0.5} fill={fill}></rect>
           <rect width="1" height="10" fill={fill}></rect>
         </pattern>
       </defs>

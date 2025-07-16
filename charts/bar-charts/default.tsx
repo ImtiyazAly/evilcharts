@@ -18,8 +18,6 @@ import {
 } from "@/components/ui/chart";
 import { Badge } from "@/components/ui/badge";
 
-export const description = "A bar chart";
-
 const chartData = [
   { month: "January", desktop: 342 },
   { month: "February", desktop: 876 },
