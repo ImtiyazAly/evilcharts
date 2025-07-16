@@ -1,6 +1,6 @@
 "use client";
 
-import { TrendingUp } from "lucide-react";
+import { TrendingDown } from "lucide-react";
 import { Bar, BarChart, XAxis, YAxis } from "recharts";
 
 import {
@@ -71,13 +71,13 @@ export function GlowingBarVerticalChart() {
       <CardHeader>
         <div className="flex flex-row justify-between">
           <CardTitle>
-            Bar Chart
+            Vertical Bar Chart
             <Badge
               variant="outline"
-              className="text-green-500 bg-green-500/10 border-none ml-2"
+              className="text-red-500 bg-red-500/10 border-none ml-2"
             >
-              <TrendingUp className="h-4 w-4" />
-              <span>5.2%</span>
+              <TrendingDown className="h-4 w-4" />
+              <span>-5.2%</span>
             </Badge>
           </CardTitle>
           <Select

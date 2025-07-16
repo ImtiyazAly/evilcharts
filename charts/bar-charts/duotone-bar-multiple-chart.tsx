@@ -42,7 +42,7 @@ export function DuotoneBarMultipleChart() {
     <Card>
       <CardHeader>
         <CardTitle>
-          Bar Chart - Multiple{" "}
+          Bar Chart - Multiple
           <Badge
             variant="outline"
             className="text-red-500 bg-red-500/10 border-none ml-2"

@@ -3,7 +3,7 @@ import { DefaultMultipleBarChart } from "@/charts/bar-charts/default-multiple";
 import { DuotoneBarChart } from "@/charts/bar-charts/duotone-bar-chart";
 import { DuotoneBarMultipleChart } from "@/charts/bar-charts/duotone-bar-multiple-chart";
 import { GlowingBarChart } from "@/charts/bar-charts/glowing-bar-chart";
-import { GlowingBarVerticalChart } from "@/charts/bar-charts/glowing-bar-verticle-chart";
+import { GlowingBarVerticalChart } from "@/charts/bar-charts/glowing-bar-vertical-chart";
 import { GradientBarChart } from "@/charts/bar-charts/gradient-bar-chart";
 import { GradientBarMultipleChart } from "@/charts/bar-charts/gradient-bar-multiple-chart";
 import { HatchedBarChart } from "@/charts/bar-charts/hatched-bar-chart";
