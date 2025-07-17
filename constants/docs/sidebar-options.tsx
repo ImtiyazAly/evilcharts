@@ -1,4 +1,4 @@
-import { BookBookmark, House2, BarChart } from "@/assets/svgs";
+import { BookBookmark, House2, BarChart, AreaChart } from "@/assets/svgs";
 import { SidebarOptionsProps } from "@/types/docs/sidebar-types";
 
 export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
@@ -29,6 +29,11 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
           title: "Bar Chart",
           url: "/docs/bar-charts",
           icon: <BarChart />,
+        },
+        {
+          title: "Area Chart",
+          url: "/docs/area-charts",
+          icon: <AreaChart />,
         },
       ],
     },

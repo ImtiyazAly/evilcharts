@@ -10,3 +10,4 @@ export { default as CodeEditor } from "./CodeEditor";
 export { default as ImageBinary } from "./ImageBinary";
 export { default as CircleInfo } from "./CircleInfo";
 export { default as BarChart } from "./BarChart";
+export { default as AreaChart } from "./AreaChart";
