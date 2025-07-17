@@ -15,6 +15,8 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+import { Badge } from "@/components/ui/badge";
+import { TrendingUp } from "lucide-react";
 
 const chartData = [
   { month: "January", desktop: 186 },
@@ -36,7 +38,16 @@ export function PingingDotChart() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Pinging Dot Chart</CardTitle>
+        <CardTitle>
+          Pinging Dot Chart
+          <Badge
+            variant="outline"
+            className="text-green-500 bg-green-500/10 border-none ml-2"
+          >
+            <TrendingUp className="h-4 w-4" />
+            <span>5.2%</span>
+          </Badge>
+        </CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
