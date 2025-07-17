@@ -16,7 +16,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { Badge } from "@/components/ui/badge";
-import { TrendingDown } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import React from "react";
 
 const chartData = [
@@ -58,10 +58,10 @@ export function AnimatedHatchedPatternAreaChart() {
           Hatched Area Chart
           <Badge
             variant="outline"
-            className="text-red-500 bg-red-500/10 border-none ml-2"
+            className="text-green-500 bg-green-500/10 border-none ml-2"
           >
-            <TrendingDown className="h-4 w-4" />
-            <span>-5.2%</span>
+            <TrendingUp className="h-4 w-4" />
+            <span>5.2%</span>
           </Badge>
         </CardTitle>
         <CardDescription>
