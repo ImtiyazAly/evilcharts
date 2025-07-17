@@ -1,4 +1,5 @@
 import { IncreaseSizePieChart } from "@/charts/pie-charts/increase-size-pie-chart";
+import { DefaultRadialChart } from "@/charts/pie-charts/radial-chart";
 import { RoundedPieChart } from "@/charts/pie-charts/rounded-pie-chart";
 import DisplayChartContainer from "@/charts/utils/chart-container";
 import ChartDisplay from "@/charts/utils/chart-display";
@@ -36,6 +37,16 @@ const Page = () => {
         </ChartDisplay>
         <ChartDisplay name="Pie Chart" code={`console.log()`}>
           <IncreaseSizePieChart key="dotted-multi-line-chart" />
+        </ChartDisplay>
+      </DisplayChartContainer>
+      {/* Radial Chart */}
+      <DocsSubContainer>
+        <DocsSubtitle title="Radial Chart" />
+        <DocsSubDescription>A radial chart.</DocsSubDescription>
+      </DocsSubContainer>
+      <DisplayChartContainer>
+        <ChartDisplay name="Radial Chart" code={`console.log()`}>
+          <DefaultRadialChart key="radial-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
     </div>

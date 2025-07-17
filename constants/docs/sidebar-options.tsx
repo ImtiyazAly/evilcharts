@@ -6,7 +6,6 @@ import {
   LineChart,
   PieChart,
   RadarChart,
-  RadialChart,
 } from "@/assets/svgs";
 import { SidebarOptionsProps } from "@/types/docs/sidebar-types";
 
@@ -58,11 +57,6 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
           title: "Radar Chart",
           url: "/docs/radar-charts",
           icon: <RadarChart />,
-        },
-        {
-          title: "Radial Chart",
-          url: "/docs/radial-charts",
-          icon: <RadialChart />,
         },
       ],
     },

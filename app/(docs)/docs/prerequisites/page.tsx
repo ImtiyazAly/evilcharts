@@ -27,8 +27,9 @@ const Page = () => {
         </DocsDescription>
       </DocsContainer>
       <Steps>
-        <InstallNextJsStep />
+        <InstallRechartsStep />
         <InstallShadcnUiStep />
+        <InstallShadcnUiComponentsStep />
       </Steps>
       <DocsContainer>
         <DocsDescription>
@@ -40,36 +41,21 @@ const Page = () => {
 };
 export default Page;
 
-const InstallNextJsStep = () => {
+const InstallRechartsStep = () => {
   return (
     <Step>
-      <DocsSubtitle title="Install Next.js" withoutLink />
+      <DocsSubtitle title="Install Recharts" withoutLink />
       <StepContent>
         <DocsParagraph>
-          Install Next.js with{" "}
-          <DocsLink href={CODE_DOCS_LINKS.INSTALL_NEXT_JS} _blank>
-            create-next-app
+          Install Recharts by running the following command{" "}
+          <DocsLink href={CODE_DOCS_LINKS.INSTALL_RECHARTS} _blank>
+            Recharts Docs
           </DocsLink>
         </DocsParagraph>
         <CodeBlock
-          language={CODE_SNIPPETS.INSTALL_NEXT_JS.language}
-          code={CODE_SNIPPETS.INSTALL_NEXT_JS.code}
+          language={CODE_SNIPPETS.INSTALL_RECHARTS.language}
+          code={CODE_SNIPPETS.INSTALL_RECHARTS.code}
         />
-        <DocsParagraph>
-          You will then be asked the following prompts{" "}
-          <DocsLink href={CODE_DOCS_LINKS.CONFIGURE_NEXT_JS_CLI} _blank>
-            Next.js CLI
-          </DocsLink>{" "}
-          :
-        </DocsParagraph>
-        <CodeBlock
-          language={CODE_SNIPPETS.CONFIGURE_NEXT_JS_CLI.language}
-          code={CODE_SNIPPETS.CONFIGURE_NEXT_JS_CLI.code}
-        />
-        <DocsParagraph>
-          Once you&apos;ve answered the prompts, a new project will be created
-          with your chosen configuration.
-        </DocsParagraph>
       </StepContent>
     </Step>
   );
@@ -90,6 +76,24 @@ const InstallShadcnUiStep = () => {
         <CodeBlock
           language={CODE_SNIPPETS.INSTALL_SHADCN_UI.language}
           code={CODE_SNIPPETS.INSTALL_SHADCN_UI.code}
+        />
+      </StepContent>
+    </Step>
+  );
+};
+
+const InstallShadcnUiComponentsStep = () => {
+  return (
+    <Step>
+      <DocsSubtitle title="Add Components" withoutLink />
+      <StepContent>
+        <DocsParagraph>
+          Add the required components to your project by running the following
+          command:
+        </DocsParagraph>
+        <CodeBlock
+          language={CODE_SNIPPETS.ADD_COMPONENTS.language}
+          code={CODE_SNIPPETS.ADD_COMPONENTS.code}
         />
       </StepContent>
     </Step>

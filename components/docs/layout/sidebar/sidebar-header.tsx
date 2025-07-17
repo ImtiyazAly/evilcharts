@@ -7,6 +7,9 @@ const DocsSidebarHeader = () => {
       <div className="flex items-center gap-2 px-2">
         <span className="doto text-2xl font-black tracking-tighter">
           EvilCharts
+          <span className="text-xs jetbrains text-muted-foreground/50 font-light ml-1.5">
+            v1.0
+          </span>
         </span>
       </div>
     </SidebarHeader>

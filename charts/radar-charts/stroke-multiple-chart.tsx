@@ -17,8 +17,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp } from "lucide-react";
 
-export const description = "A radar chart";
-
 const chartData = [
   { month: "January", desktop: 186, mobile: 92 },
   { month: "February", desktop: 305, mobile: 178 },

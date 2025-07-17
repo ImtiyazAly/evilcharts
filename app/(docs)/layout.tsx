@@ -15,6 +15,7 @@ export default function RootLayout({
         <DocsHeader />
         {/* Childrens */}
         <div className="p-6 w-full">{children}</div>
+        {/* Request more charts */}
       </SidebarInset>
     </SidebarProvider>
   );
