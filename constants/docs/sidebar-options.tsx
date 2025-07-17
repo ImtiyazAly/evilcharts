@@ -1,4 +1,13 @@
-import { BookBookmark, House2, BarChart, AreaChart } from "@/assets/svgs";
+import {
+  BookBookmark,
+  House2,
+  BarChart,
+  AreaChart,
+  LineChart,
+  PieChart,
+  RadarChart,
+  RadialChart,
+} from "@/assets/svgs";
 import { SidebarOptionsProps } from "@/types/docs/sidebar-types";
 
 export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
@@ -34,6 +43,26 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
           title: "Area Chart",
           url: "/docs/area-charts",
           icon: <AreaChart />,
+        },
+        {
+          title: "Line Chart",
+          url: "/docs/line-charts",
+          icon: <LineChart />,
+        },
+        {
+          title: "Pie Chart",
+          url: "/docs/pie-charts",
+          icon: <PieChart />,
+        },
+        {
+          title: "Radar Chart",
+          url: "/docs/radar-charts",
+          icon: <RadarChart />,
+        },
+        {
+          title: "Radial Chart",
+          url: "/docs/radial-charts",
+          icon: <RadialChart />,
         },
       ],
     },

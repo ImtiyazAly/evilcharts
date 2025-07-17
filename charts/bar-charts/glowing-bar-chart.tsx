@@ -130,24 +130,14 @@ export function GlowingBarChart() {
               dataKey="mobile"
               fill="var(--color-mobile)"
               radius={4}
-              shape={
-                <CustomGradientBar
-                  activeProperty={activeProperty}
-                  glowOpacity={0.7}
-                />
-              }
+              shape={<CustomGradientBar activeProperty={activeProperty} />}
               background={{ fill: "currentColor", radius: 4 }} // Only Top Bar will have background else it will give render errors
               overflow="visible"
             />
             <Bar
               stackId="a"
               barSize={8}
-              shape={
-                <CustomGradientBar
-                  activeProperty={activeProperty}
-                  glowOpacity={0.7}
-                />
-              }
+              shape={<CustomGradientBar activeProperty={activeProperty} />}
               dataKey="tablet"
               fill="var(--color-tablet)"
               radius={4}
@@ -156,12 +146,7 @@ export function GlowingBarChart() {
             <Bar
               stackId="a"
               barSize={8}
-              shape={
-                <CustomGradientBar
-                  activeProperty={activeProperty}
-                  glowOpacity={0.7}
-                />
-              }
+              shape={<CustomGradientBar activeProperty={activeProperty} />}
               dataKey="desktop"
               fill="var(--color-desktop)"
               radius={4}
@@ -181,36 +166,13 @@ const CustomGradientBar = (
     glowOpacity?: number;
   }
 ) => {
-  const {
-    fill,
-    x,
-    y,
-    width,
-    height,
-    dataKey,
-    activeProperty,
-    radius,
-    glowOpacity,
-  } = props;
+  const { fill, x, y, width, height, dataKey, activeProperty, radius } = props;
   console.log("props", props);
 
   const isActive = activeProperty === "all" ? true : activeProperty === dataKey;
 
   return (
     <>
-      {isActive && activeProperty !== "all" && (
-        <rect
-          x={x}
-          y={y}
-          rx={radius}
-          width={width}
-          height={height}
-          stroke="none"
-          fill={fill}
-          opacity={glowOpacity}
-          filter={`url(#glow-chart-${dataKey})`}
-        />
-      )}
       <rect
         x={x}
         y={y}
@@ -220,6 +182,11 @@ const CustomGradientBar = (
         stroke="none"
         fill={fill}
         opacity={isActive ? 1 : 0.1}
+        filter={
+          isActive && activeProperty !== "all"
+            ? `url(#glow-chart-${dataKey})`
+            : undefined
+        }
       />
       <defs>
         <filter
