@@ -13,13 +13,14 @@ interface CodeBlockProps {
   clickToViewMore?: boolean;
   maxHeight?: number;
   title?: string;
+  heightAuto?: boolean;
 }
 
 // Server Component (async) - for use in server-side pages
 const CodeBlock = async ({
   language,
   code,
-
+  heightAuto = false,
   title,
   type = "terminal",
 }: CodeBlockProps) => {
@@ -39,7 +40,7 @@ const CodeBlock = async ({
         </div>
         <CopyButton code={code} />
       </div>
-      <CodeBlockHtml html={html} />
+      <CodeBlockHtml html={html} heightAuto={heightAuto} />
     </div>
   );
 };

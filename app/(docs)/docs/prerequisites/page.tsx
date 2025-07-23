@@ -55,6 +55,7 @@ const InstallRechartsStep = () => {
         <CodeBlock
           language={CODE_SNIPPETS.INSTALL_RECHARTS.language}
           code={CODE_SNIPPETS.INSTALL_RECHARTS.code}
+          heightAuto={true}
         />
       </StepContent>
     </Step>
@@ -76,6 +77,7 @@ const InstallShadcnUiStep = () => {
         <CodeBlock
           language={CODE_SNIPPETS.INSTALL_SHADCN_UI.language}
           code={CODE_SNIPPETS.INSTALL_SHADCN_UI.code}
+          heightAuto={true}
         />
       </StepContent>
     </Step>
@@ -94,6 +96,7 @@ const InstallShadcnUiComponentsStep = () => {
         <CodeBlock
           language={CODE_SNIPPETS.ADD_COMPONENTS.language}
           code={CODE_SNIPPETS.ADD_COMPONENTS.code}
+          heightAuto={true}
         />
       </StepContent>
     </Step>
