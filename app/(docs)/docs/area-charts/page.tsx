@@ -16,6 +16,7 @@ import React from "react";
 import { AnimatedHatchedPatternAreaChart } from "@/charts/area-charts/animated-hatched-pattern-chart";
 import { BarPatternChart } from "@/charts/area-charts/bar-pattern-chart";
 import { AnimatedHighlightedAreaChart } from "@/charts/area-charts/animated-highlighted-chart";
+import GradientAreaChartJson from "@/public/chart/gradient-chart.json";
 
 const Page = () => {
   return (
@@ -35,10 +36,10 @@ const Page = () => {
         </DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
-        <ChartDisplay name="Area Chart" code={`console.log()`}>
+        <ChartDisplay name="Area Chart" jsonContent={GradientAreaChartJson}>
           <GradientAreaChart key="gradient-area-chart" />
         </ChartDisplay>
-        <ChartDisplay name="Area Chart" code={`console.log()`}>
+        <ChartDisplay name="Area Chart" jsonContent={GradientAreaChartJson}>
           <GradientRoundedAreaChart key="gradient-rounded-area-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
@@ -50,10 +51,10 @@ const Page = () => {
         </DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
-        <ChartDisplay name="Area Chart" code={`console.log()`}>
+        <ChartDisplay name="Area Chart" jsonContent={GradientAreaChartJson}>
           <DottedPatternAreaChart key="pattern-area-chart" />
         </ChartDisplay>
-        <ChartDisplay name="Area Chart" code={`console.log()`}>
+        <ChartDisplay name="Area Chart" jsonContent={GradientAreaChartJson}>
           <BarPatternChart key="bar-pattern-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
@@ -66,10 +67,10 @@ const Page = () => {
         </DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
-        <ChartDisplay name="Area Chart" code={`console.log()`}>
+        <ChartDisplay name="Area Chart" jsonContent={GradientAreaChartJson}>
           <AnimatedHatchedPatternAreaChart key="hatched-pattern-area-chart" />
         </ChartDisplay>
-        <ChartDisplay name="Area Chart" code={`console.log()`}>
+        <ChartDisplay name="Area Chart" jsonContent={GradientAreaChartJson}>
           <AnimatedHighlightedAreaChart key="animated-highlighted-area-chart" />
         </ChartDisplay>
       </DisplayChartContainer>

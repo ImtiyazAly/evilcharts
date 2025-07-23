@@ -15,10 +15,11 @@ interface CodeBlockProps {
   title?: string;
 }
 
+// Server Component (async) - for use in server-side pages
 const CodeBlock = async ({
   language,
   code,
-  clickToViewMore = false,
+
   title,
   type = "terminal",
 }: CodeBlockProps) => {
@@ -28,7 +29,7 @@ const CodeBlock = async ({
   });
 
   return (
-    <div className="bg-border/40 p-1 rounded-[14px] group dark:shadow-md">
+    <div className="bg-border/40 p-1 rounded-[14px] group dark:shadow-md ">
       <div className="pb-2 py-1 px-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {getCodeBlockIcon(type)}
@@ -38,12 +39,59 @@ const CodeBlock = async ({
         </div>
         <CopyButton code={code} />
       </div>
-      <CodeBlockHtml html={html} clickToViewMore={clickToViewMore} />
+      <CodeBlockHtml html={html} />
     </div>
   );
 };
 
-export { CodeBlock };
+// Client Component (non-async) - for use in client components with pre-generated HTML
+interface CodeBlockClientProps {
+  html: string;
+  code: string;
+  language: BundledLanguage;
+  clickToViewMore?: boolean;
+  title?: string;
+  type?: CodeBlockType;
+}
+
+const CodeBlockClient = ({
+  html,
+  code,
+  language,
+  title,
+  type = "terminal",
+}: CodeBlockClientProps) => {
+  return (
+    <div className="bg-border/40 p-1 rounded-[14px] group dark:shadow-md h-auto">
+      <div className="pb-2 py-1 px-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          {getCodeBlockIcon(type)}
+          <span className="text-xs text-muted-foreground font-medium leading-none">
+            {title ? title : language}
+          </span>
+        </div>
+        <CopyButton code={code} />
+      </div>
+      <CodeBlockHtml html={html} />
+    </div>
+  );
+};
+
+const AddShadcnCodeBlock = ({ text }: { text: string }) => {
+  return (
+    <div className="bg-border/40 p-1 rounded-[14px] group dark:shadow-md flex flex-col">
+      <div className="flex justify-between px-3 py-1 items-center">
+        <span className="text-xs text-muted-foreground">Command</span>
+        <CopyButton code={text} />
+      </div>
+      <span className="p-3 text-sm bg-[#27272A] rounded-xl font-medium text-muted-foreground">
+        {text}
+      </span>
+    </div>
+  );
+};
+
+export { CodeBlock, CodeBlockClient, AddShadcnCodeBlock };
 
 const getCodeBlockIcon = (type: CodeBlockType) => {
   switch (type) {
