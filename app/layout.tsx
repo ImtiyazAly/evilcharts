@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Evil Charts - Beautiful & Animated Charts",
   description:
     "Evil Charts is a library of beautiful charts components that are easy to use and customize. It is built with Tailwind CSS and React. Built on top of shadcn/recharts.",
+  openGraph: {
+    images: ["/banner.png"],
+  },
 };
 
 export default function RootLayout({
