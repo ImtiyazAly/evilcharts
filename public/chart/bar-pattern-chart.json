@@ -2,7 +2,7 @@
   "name": "bar-pattern-chart",
   "type": "registry:ui",
   "registryDependencies": [
-    "charts"
+    "chart"
   ],
   "dependencies": [
     "recharts"

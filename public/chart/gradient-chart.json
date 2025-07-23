@@ -2,7 +2,7 @@
   "name": "gradient-chart",
   "type": "registry:ui",
   "registryDependencies": [
-    "charts"
+    "chart"
   ],
   "dependencies": [
     "recharts"

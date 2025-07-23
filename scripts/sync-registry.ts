@@ -57,7 +57,7 @@ function updateRegistryComponents() {
       newComponents.push({
         name,
         path: componentPath,
-        registryDependencies: ["charts"],
+        registryDependencies: ["chart"],
         dependencies: ["recharts"],
       });
     }
@@ -84,7 +84,7 @@ function updateRegistryComponents() {
   const newComponentsString = newComponents
     .map(
       (comp) =>
-        `  {\n    name: "${comp.name}",\n    path: path.join(__dirname, "../charts/${comp.path}"),\n    registryDependencies: ["charts"],\n    dependencies: ["recharts"],\n  }`
+        `  {\n    name: "${comp.name}",\n    path: path.join(__dirname, "../charts/${comp.path}"),\n    registryDependencies: ["chart"],\n    dependencies: ["recharts"],\n  }`
     )
     .join(",\n");
 

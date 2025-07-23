@@ -2,7 +2,7 @@
   "name": "pinging-dot-chart",
   "type": "registry:ui",
   "registryDependencies": [
-    "charts"
+    "chart"
   ],
   "dependencies": [
     "recharts"

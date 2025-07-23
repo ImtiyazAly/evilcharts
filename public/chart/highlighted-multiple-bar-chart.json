@@ -2,7 +2,7 @@
   "name": "highlighted-multiple-bar-chart",
   "type": "registry:ui",
   "registryDependencies": [
-    "charts"
+    "chart"
   ],
   "dependencies": [
     "recharts"

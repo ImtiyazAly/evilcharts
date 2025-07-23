@@ -2,7 +2,7 @@
   "name": "rainbow-glow-gradient-line",
   "type": "registry:ui",
   "registryDependencies": [
-    "charts"
+    "chart"
   ],
   "dependencies": [
     "recharts"

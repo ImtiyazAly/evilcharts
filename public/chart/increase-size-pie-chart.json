@@ -2,7 +2,7 @@
   "name": "increase-size-pie-chart",
   "type": "registry:ui",
   "registryDependencies": [
-    "charts"
+    "chart"
   ],
   "dependencies": [
     "recharts"

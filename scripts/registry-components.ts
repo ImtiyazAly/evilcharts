@@ -22,7 +22,7 @@ export const components: ComponentProps[] = [
       __dirname,
       "../charts/area-charts/animated-hatched-pattern-chart"
     ),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
@@ -31,37 +31,37 @@ export const components: ComponentProps[] = [
       __dirname,
       "../charts/area-charts/animated-highlighted-chart"
     ),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "bar-pattern-chart",
     path: path.join(__dirname, "../charts/area-charts/bar-pattern-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "dotted-pattern-chart",
     path: path.join(__dirname, "../charts/area-charts/dotted-pattern-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "gradient-chart",
     path: path.join(__dirname, "../charts/area-charts/gradient-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "gradient-rounded-chart",
     path: path.join(__dirname, "../charts/area-charts/gradient-rounded-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "default-bar-chart",
     path: path.join(__dirname, "../charts/bar-charts/default-bar-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
@@ -70,13 +70,13 @@ export const components: ComponentProps[] = [
       __dirname,
       "../charts/bar-charts/default-multiple-bar-chart"
     ),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "duotone-bar-chart",
     path: path.join(__dirname, "../charts/bar-charts/duotone-bar-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
@@ -85,13 +85,13 @@ export const components: ComponentProps[] = [
       __dirname,
       "../charts/bar-charts/duotone-bar-multiple-chart"
     ),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "glowing-bar-chart",
     path: path.join(__dirname, "../charts/bar-charts/glowing-bar-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
@@ -100,13 +100,13 @@ export const components: ComponentProps[] = [
       __dirname,
       "../charts/bar-charts/glowing-bar-vertical-chart"
     ),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "gradient-bar-chart",
     path: path.join(__dirname, "../charts/bar-charts/gradient-bar-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
@@ -115,13 +115,13 @@ export const components: ComponentProps[] = [
       __dirname,
       "../charts/bar-charts/gradient-bar-multiple-chart"
     ),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "hatched-bar-chart",
     path: path.join(__dirname, "../charts/bar-charts/hatched-bar-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
@@ -130,13 +130,13 @@ export const components: ComponentProps[] = [
       __dirname,
       "../charts/bar-charts/hatched-bar-multiple-chart"
     ),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "highlighted-bar-chart",
     path: path.join(__dirname, "../charts/bar-charts/highlighted-bar-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
@@ -145,37 +145,37 @@ export const components: ComponentProps[] = [
       __dirname,
       "../charts/bar-charts/highlighted-multiple-bar-chart"
     ),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "dotted-line",
     path: path.join(__dirname, "../charts/line-charts/dotted-line"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "dotted-multi-line",
     path: path.join(__dirname, "../charts/line-charts/dotted-multi-line"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "glowing-line",
     path: path.join(__dirname, "../charts/line-charts/glowing-line"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "number-dot-chart",
     path: path.join(__dirname, "../charts/line-charts/number-dot-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "pinging-dot-chart",
     path: path.join(__dirname, "../charts/line-charts/pinging-dot-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
@@ -184,25 +184,25 @@ export const components: ComponentProps[] = [
       __dirname,
       "../charts/line-charts/rainbow-glow-gradient-line"
     ),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "increase-size-pie-chart",
     path: path.join(__dirname, "../charts/pie-charts/increase-size-pie-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "radial-chart",
     path: path.join(__dirname, "../charts/pie-charts/radial-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "rounded-pie-chart",
     path: path.join(__dirname, "../charts/pie-charts/rounded-pie-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
@@ -211,7 +211,7 @@ export const components: ComponentProps[] = [
       __dirname,
       "../charts/radar-charts/glowing-multiple-stroke-radar-chart"
     ),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
@@ -220,7 +220,7 @@ export const components: ComponentProps[] = [
       __dirname,
       "../charts/radar-charts/glowing-stroke-radar-chart"
     ),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
@@ -229,13 +229,13 @@ export const components: ComponentProps[] = [
       __dirname,
       "../charts/radar-charts/stroke-multiple-radar-chart"
     ),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
   {
     name: "stroke-radar-chart",
     path: path.join(__dirname, "../charts/radar-charts/stroke-radar-chart"),
-    registryDependencies: ["charts"],
+    registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
 ];

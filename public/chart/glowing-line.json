@@ -2,7 +2,7 @@
   "name": "glowing-line",
   "type": "registry:ui",
   "registryDependencies": [
-    "charts"
+    "chart"
   ],
   "dependencies": [
     "recharts"

@@ -2,7 +2,7 @@
   "name": "stroke-multiple-radar-chart",
   "type": "registry:ui",
   "registryDependencies": [
-    "charts"
+    "chart"
   ],
   "dependencies": [
     "recharts"
