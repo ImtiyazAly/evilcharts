@@ -13,6 +13,10 @@ import {
 } from "@/components/docs/components/docs-typography";
 import { GenerateBreadcrumb } from "@/components/ui/generate-breadcrumb";
 import React from "react";
+// jsons
+import DefaultPieChartJson from "@/public/chart/rounded-pie-chart.json";
+import IncreaseSizePieChartJson from "@/public/chart/increase-size-pie-chart.json";
+import RadialChartJson from "@/public/chart/radial-chart.json";
 
 const Page = () => {
   return (
@@ -32,10 +36,10 @@ const Page = () => {
         </DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
-        <ChartDisplay name="Pie Chart" code={`console.log()`}>
+        <ChartDisplay name="Pie Chart" jsonContent={DefaultPieChartJson}>
           <RoundedPieChart key="rounded-pie-chart" />
         </ChartDisplay>
-        <ChartDisplay name="Pie Chart" code={`console.log()`}>
+        <ChartDisplay name="Pie Chart" jsonContent={IncreaseSizePieChartJson}>
           <IncreaseSizePieChart key="dotted-multi-line-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
@@ -45,7 +49,7 @@ const Page = () => {
         <DocsSubDescription>A radial chart.</DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
-        <ChartDisplay name="Radial Chart" code={`console.log()`}>
+        <ChartDisplay name="Radial Chart" jsonContent={RadialChartJson}>
           <DefaultRadialChart key="radial-chart" />
         </ChartDisplay>
       </DisplayChartContainer>

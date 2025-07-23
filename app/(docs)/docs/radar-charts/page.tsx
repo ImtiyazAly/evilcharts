@@ -1,7 +1,7 @@
-import { GlowingMultipleStrokeRadarChart } from "@/charts/radar-charts/glowing-multiple-stroke-chart";
-import { GlowingStrokeRadarChart } from "@/charts/radar-charts/glowing-stroke-chart";
-import { StrokeRadarChart } from "@/charts/radar-charts/stroke-chart";
-import { StrokeMultipleRadarChart } from "@/charts/radar-charts/stroke-multiple-chart";
+import { GlowingMultipleStrokeRadarChart } from "@/charts/radar-charts/glowing-multiple-stroke-radar-chart";
+import { GlowingStrokeRadarChart } from "@/charts/radar-charts/glowing-stroke-radar-chart";
+import { StrokeRadarChart } from "@/charts/radar-charts/stroke-radar-chart";
+import { StrokeMultipleRadarChart } from "@/charts/radar-charts/stroke-multiple-radar-chart";
 import DisplayChartContainer from "@/charts/utils/chart-container";
 import ChartDisplay from "@/charts/utils/chart-display";
 import {
@@ -14,6 +14,11 @@ import {
 } from "@/components/docs/components/docs-typography";
 import { GenerateBreadcrumb } from "@/components/ui/generate-breadcrumb";
 import React from "react";
+// jsons
+import DefaultRadarChartJson from "@/public/chart/radial-chart.json";
+import DefaultMultipleRadarChartJson from "@/public/chart/stroke-multiple-radar-chart.json";
+import GlowingStrokeRadarChartJson from "@/public/chart/glowing-stroke-radar-chart.json";
+import GlowingMultipleStrokeRadarChartJson from "@/public/chart/glowing-multiple-stroke-radar-chart.json";
 
 const Page = () => {
   return (
@@ -31,10 +36,13 @@ const Page = () => {
         <DocsSubDescription>A radar chart with a stroke.</DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
-        <ChartDisplay name="Radar Chart" code={`console.log()`}>
+        <ChartDisplay name="Radar Chart" jsonContent={DefaultRadarChartJson}>
           <StrokeRadarChart key="stroke-radar-chart" />
         </ChartDisplay>
-        <ChartDisplay name="Radar Chart" code={`console.log()`}>
+        <ChartDisplay
+          name="Radar Chart"
+          jsonContent={DefaultMultipleRadarChartJson}
+        >
           <StrokeMultipleRadarChart key="stroke-multiple-radar-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
@@ -46,10 +54,16 @@ const Page = () => {
         </DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
-        <ChartDisplay name="Radar Chart" code={`console.log()`}>
+        <ChartDisplay
+          name="Radar Chart"
+          jsonContent={GlowingStrokeRadarChartJson}
+        >
           <GlowingStrokeRadarChart key="glowing-stroke-radar-chart" />
         </ChartDisplay>
-        <ChartDisplay name="Radar Chart" code={`console.log()`}>
+        <ChartDisplay
+          name="Radar Chart"
+          jsonContent={GlowingMultipleStrokeRadarChartJson}
+        >
           <GlowingMultipleStrokeRadarChart key="glowing-multiple-stroke-radar-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
