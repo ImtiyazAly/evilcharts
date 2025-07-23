@@ -84,7 +84,7 @@ const AddShadcnCodeBlock = ({ text }: { text: string }) => {
         <span className="text-xs text-muted-foreground">Command</span>
         <CopyButton code={text} />
       </div>
-      <span className="p-3 text-sm bg-[#27272A] rounded-xl font-medium text-muted-foreground">
+      <span className="p-3 text-sm bg-white dark:bg-[#27272A] rounded-xl font-medium text-secondary-foreground">
         {text}
       </span>
     </div>

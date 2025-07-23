@@ -16,7 +16,13 @@ import React from "react";
 import { AnimatedHatchedPatternAreaChart } from "@/charts/area-charts/animated-hatched-pattern-chart";
 import { BarPatternChart } from "@/charts/area-charts/bar-pattern-chart";
 import { AnimatedHighlightedAreaChart } from "@/charts/area-charts/animated-highlighted-chart";
+// File jsons
 import GradientAreaChartJson from "@/public/chart/gradient-chart.json";
+import GradientRoundedAreaChartJson from "@/public/chart/gradient-rounded-chart.json";
+import DottedPatternAreaChartJson from "@/public/chart/dotted-pattern-chart.json";
+import BarPatternChartJson from "@/public/chart/bar-pattern-chart.json";
+import AnimatedHatchedPatternChartJson from "@/public/chart/animated-hatched-pattern-chart.json";
+import AnimatedHighlightedChartJson from "@/public/chart/animated-highlighted-chart.json";
 
 const Page = () => {
   return (
@@ -39,7 +45,10 @@ const Page = () => {
         <ChartDisplay name="Area Chart" jsonContent={GradientAreaChartJson}>
           <GradientAreaChart key="gradient-area-chart" />
         </ChartDisplay>
-        <ChartDisplay name="Area Chart" jsonContent={GradientAreaChartJson}>
+        <ChartDisplay
+          name="Area Chart"
+          jsonContent={GradientRoundedAreaChartJson}
+        >
           <GradientRoundedAreaChart key="gradient-rounded-area-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
@@ -51,10 +60,13 @@ const Page = () => {
         </DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
-        <ChartDisplay name="Area Chart" jsonContent={GradientAreaChartJson}>
+        <ChartDisplay
+          name="Area Chart"
+          jsonContent={DottedPatternAreaChartJson}
+        >
           <DottedPatternAreaChart key="pattern-area-chart" />
         </ChartDisplay>
-        <ChartDisplay name="Area Chart" jsonContent={GradientAreaChartJson}>
+        <ChartDisplay name="Area Chart" jsonContent={BarPatternChartJson}>
           <BarPatternChart key="bar-pattern-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
@@ -67,10 +79,16 @@ const Page = () => {
         </DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
-        <ChartDisplay name="Area Chart" jsonContent={GradientAreaChartJson}>
+        <ChartDisplay
+          name="Area Chart"
+          jsonContent={AnimatedHatchedPatternChartJson}
+        >
           <AnimatedHatchedPatternAreaChart key="hatched-pattern-area-chart" />
         </ChartDisplay>
-        <ChartDisplay name="Area Chart" jsonContent={GradientAreaChartJson}>
+        <ChartDisplay
+          name="Area Chart"
+          jsonContent={AnimatedHighlightedChartJson}
+        >
           <AnimatedHighlightedAreaChart key="animated-highlighted-area-chart" />
         </ChartDisplay>
       </DisplayChartContainer>

@@ -24,10 +24,13 @@ export const components: ComponentProps[] = [
     ),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
-  }, 
+  },
   {
     name: "animated-highlighted-chart",
-    path: path.join(__dirname, "../charts/area-charts/animated-highlighted-chart"),
+    path: path.join(
+      __dirname,
+      "../charts/area-charts/animated-highlighted-chart"
+    ),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
   },
@@ -56,14 +59,17 @@ export const components: ComponentProps[] = [
     dependencies: ["recharts"],
   },
   {
-    name: "default-multiple",
-    path: path.join(__dirname, "../charts/bar-charts/default-multiple"),
+    name: "default-bar-chart",
+    path: path.join(__dirname, "../charts/bar-charts/default-bar-chart"),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
   },
   {
-    name: "default",
-    path: path.join(__dirname, "../charts/bar-charts/default"),
+    name: "default-multiple-bar-chart",
+    path: path.join(
+      __dirname,
+      "../charts/bar-charts/default-multiple-bar-chart"
+    ),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
   },
@@ -75,7 +81,10 @@ export const components: ComponentProps[] = [
   },
   {
     name: "duotone-bar-multiple-chart",
-    path: path.join(__dirname, "../charts/bar-charts/duotone-bar-multiple-chart"),
+    path: path.join(
+      __dirname,
+      "../charts/bar-charts/duotone-bar-multiple-chart"
+    ),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
   },
@@ -87,7 +96,10 @@ export const components: ComponentProps[] = [
   },
   {
     name: "glowing-bar-vertical-chart",
-    path: path.join(__dirname, "../charts/bar-charts/glowing-bar-vertical-chart"),
+    path: path.join(
+      __dirname,
+      "../charts/bar-charts/glowing-bar-vertical-chart"
+    ),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
   },
@@ -99,7 +111,10 @@ export const components: ComponentProps[] = [
   },
   {
     name: "gradient-bar-multiple-chart",
-    path: path.join(__dirname, "../charts/bar-charts/gradient-bar-multiple-chart"),
+    path: path.join(
+      __dirname,
+      "../charts/bar-charts/gradient-bar-multiple-chart"
+    ),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
   },
@@ -111,7 +126,10 @@ export const components: ComponentProps[] = [
   },
   {
     name: "hatched-bar-multiple-chart",
-    path: path.join(__dirname, "../charts/bar-charts/hatched-bar-multiple-chart"),
+    path: path.join(
+      __dirname,
+      "../charts/bar-charts/hatched-bar-multiple-chart"
+    ),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
   },
@@ -123,7 +141,10 @@ export const components: ComponentProps[] = [
   },
   {
     name: "highlighted-multiple-bar-chart",
-    path: path.join(__dirname, "../charts/bar-charts/highlighted-multiple-bar-chart"),
+    path: path.join(
+      __dirname,
+      "../charts/bar-charts/highlighted-multiple-bar-chart"
+    ),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
   },
@@ -159,7 +180,10 @@ export const components: ComponentProps[] = [
   },
   {
     name: "rainbow-glow-gradient-line",
-    path: path.join(__dirname, "../charts/line-charts/rainbow-glow-gradient-line"),
+    path: path.join(
+      __dirname,
+      "../charts/line-charts/rainbow-glow-gradient-line"
+    ),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
   },
@@ -182,27 +206,36 @@ export const components: ComponentProps[] = [
     dependencies: ["recharts"],
   },
   {
-    name: "glowing-multiple-stroke-chart",
-    path: path.join(__dirname, "../charts/radar-charts/glowing-multiple-stroke-chart"),
+    name: "glowing-multiple-stroke-radar-chart",
+    path: path.join(
+      __dirname,
+      "../charts/radar-charts/glowing-multiple-stroke-radar-chart"
+    ),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
   },
   {
-    name: "glowing-stroke-chart",
-    path: path.join(__dirname, "../charts/radar-charts/glowing-stroke-chart"),
+    name: "glowing-stroke-radar-chart",
+    path: path.join(
+      __dirname,
+      "../charts/radar-charts/glowing-stroke-radar-chart"
+    ),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
   },
   {
-    name: "stroke-chart",
-    path: path.join(__dirname, "../charts/radar-charts/stroke-chart"),
+    name: "stroke-multiple-radar-chart",
+    path: path.join(
+      __dirname,
+      "../charts/radar-charts/stroke-multiple-radar-chart"
+    ),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
   },
   {
-    name: "stroke-multiple-chart",
-    path: path.join(__dirname, "../charts/radar-charts/stroke-multiple-chart"),
+    name: "stroke-radar-chart",
+    path: path.join(__dirname, "../charts/radar-charts/stroke-radar-chart"),
     registryDependencies: ["charts"],
     dependencies: ["recharts"],
-  }
+  },
 ];

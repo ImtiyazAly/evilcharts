@@ -16,6 +16,13 @@ import {
 import { GenerateBreadcrumb } from "@/components/ui/generate-breadcrumb";
 import React from "react";
 import { GlowingLineChart } from "@/charts/line-charts/glowing-line";
+// jsons
+import DottedLineChartJson from "@/public/chart/dotted-line.json";
+import DottedMultiLineChartJson from "@/public/chart/dotted-multi-line.json";
+import GlowingLineChartJson from "@/public/chart/glowing-line.json";
+import RainbowGlowGradientLineChartJson from "@/public/chart/rainbow-glow-gradient-line.json";
+import PingingDotChartJson from "@/public/chart/pinging-dot-chart.json";
+import NumberDotLineChartJson from "@/public/chart/number-dot-chart.json";
 
 const Page = () => {
   return (
@@ -35,10 +42,10 @@ const Page = () => {
         </DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
-        <ChartDisplay name="Line Chart" code={`console.log()`}>
+        <ChartDisplay name="Line Chart" jsonContent={DottedLineChartJson}>
           <DottedLineChart key="dotted-line-chart" />
         </ChartDisplay>
-        <ChartDisplay name="Line Chart" code={`console.log()`}>
+        <ChartDisplay name="Line Chart" jsonContent={DottedMultiLineChartJson}>
           <DottedMultiLineChart key="dotted-multi-line-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
@@ -50,10 +57,13 @@ const Page = () => {
         </DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
-        <ChartDisplay name="Line Chart" code={`console.log()`}>
+        <ChartDisplay name="Line Chart" jsonContent={GlowingLineChartJson}>
           <GlowingLineChart key="glowing-line-chart" />
         </ChartDisplay>
-        <ChartDisplay name="Line Chart" code={`console.log()`}>
+        <ChartDisplay
+          name="Line Chart"
+          jsonContent={RainbowGlowGradientLineChartJson}
+        >
           <RainbowGlowGradientLineChart key="rainbow-glowing-line-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
@@ -63,10 +73,10 @@ const Page = () => {
         <DocsSubDescription>A line chart with a custom dot.</DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
-        <ChartDisplay name="Line Chart" code={`console.log()`}>
+        <ChartDisplay name="Line Chart" jsonContent={PingingDotChartJson}>
           <PingingDotChart key="pinging-dot-chart" />
         </ChartDisplay>
-        <ChartDisplay name="Line Chart" code={`console.log()`}>
+        <ChartDisplay name="Line Chart" jsonContent={NumberDotLineChartJson}>
           <NumberDotLineChart key="number-dot-line-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
