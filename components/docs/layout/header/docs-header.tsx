@@ -10,7 +10,7 @@ import { useTheme } from "next-themes";
 import { GithubIcon } from "lucide-react";
 
 const DocsHeader = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
     <header className="flex h-14 shrink-0 items-center justify-between gap-2 border-b border-dashed px-4 sticky top-0 bg-background z-50">
@@ -20,7 +20,7 @@ const DocsHeader = () => {
           variant="ghost"
           size="icon"
           className={cn("h-7 w-7 cursor-pointer")}
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
         >
           <Lightbulb3 strokewidth={1.5} width="16" height="16" />
         </Button>
