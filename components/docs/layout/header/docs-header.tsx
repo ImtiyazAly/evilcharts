@@ -7,6 +7,7 @@ import { Lightbulb3 } from "@/assets/svgs";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
+import { GithubIcon } from "lucide-react";
 
 const DocsHeader = () => {
   const { theme, setTheme } = useTheme();
@@ -23,6 +24,15 @@ const DocsHeader = () => {
         >
           <Lightbulb3 strokewidth={1.5} width="16" height="16" />
         </Button>
+        <Link
+          href="https://github.com/legions-developer/evilcharts"
+          target="_blank"
+        >
+          <Button variant="secondary" className={cn("h-7 cursor-pointer")}>
+            <span className="text-xs">Star Github</span>
+            <GithubIcon size={10} />
+          </Button>
+        </Link>
         <Link href="https://legions.dev" target="_blank">
           <Button variant="outline" className={cn("h-7 cursor-pointer")}>
             <span className="text-xs">Creator</span>
