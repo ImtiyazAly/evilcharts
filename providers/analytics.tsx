@@ -4,7 +4,7 @@ const Analytics = () => {
   return (
     <>
       <OpenPanelComponent
-        clientId="8a82926c-9579-42cb-bd11-af35516844ff"
+        clientId="c8796996-20b3-410f-b0a7-f0703e01e3d6"
         trackScreenViews={true}
         trackAttributes={true}
         trackOutgoingLinks={true}

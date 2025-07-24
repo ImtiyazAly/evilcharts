@@ -3,7 +3,7 @@
 import Script from "next/script";
 import React from "react";
 
-const ClarityTagId = "qm1uxp16vw";
+const ClarityTagId = "sjs62lqity";
 
 const MicrosoftClarity = () => {
   return (
