@@ -30,7 +30,7 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
   ],
   components: [
     {
-      title: "Charts",
+      title: "Bar Charts",
       url: "#",
       items: [
         {
@@ -38,6 +38,17 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
           url: "/docs/bar-charts",
           icon: <BarChart />,
         },
+        {
+          title: "Animated Bar Chart",
+          url: "/docs/animated-bar-charts",
+          icon: <BarChart />,
+        },
+      ],
+    },
+    {
+      title: "Charts",
+      url: "#",
+      items: [
         {
           title: "Area Chart",
           url: "/docs/area-charts",

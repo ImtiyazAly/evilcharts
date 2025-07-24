@@ -238,4 +238,22 @@ export const components: ComponentProps[] = [
     registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
+  {
+    name: "monochrome-bar-chart",
+    path: path.join(
+      __dirname,
+      "../charts/animated-bar-charts/monochrome-bar-chart"
+    ),
+    registryDependencies: ["chart"],
+    dependencies: ["recharts", "motion"],
+  },
+  {
+    name: "value-line-bar-chart",
+    path: path.join(
+      __dirname,
+      "../charts/animated-bar-charts/value-line-bar-chart"
+    ),
+    registryDependencies: ["chart"],
+    dependencies: ["recharts", "motion"],
+  },
 ];
