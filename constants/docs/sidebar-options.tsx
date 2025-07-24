@@ -39,8 +39,8 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
           icon: <BarChart />,
         },
         {
-          title: "Custom Bar Chart",
-          url: "/docs/custom-bar-charts",
+          title: "Animated Bar Chart",
+          url: "/docs/animated-bar-charts",
           icon: <BarChart />,
         },
       ],
