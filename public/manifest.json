@@ -1,7 +1,7 @@
 {
-  "name": "SVG UI",
-  "short_name": "SVG UI",
-  "description": "A modern UI component library with SVG icons",
+  "name": "EvilCharts UI",
+  "short_name": "EvilCharts UI",
+  "description": "A Modern chart ui libary with beautiful and animated charts",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
