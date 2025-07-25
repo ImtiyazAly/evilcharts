@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="relative flex ">
       <div className="min-h-[100svh] flex items-center mx-auto w-full max-w-4xl">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 px-6 sm:px-0">
           {/* logo */}
           <div className="flex items-center gap-2">
             <span className="doto text-4xl font-black tracking-tighter">

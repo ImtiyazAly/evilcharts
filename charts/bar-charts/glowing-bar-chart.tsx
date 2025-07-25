@@ -167,7 +167,6 @@ const CustomGradientBar = (
   }
 ) => {
   const { fill, x, y, width, height, dataKey, activeProperty, radius } = props;
-  console.log("props", props);
 
   const isActive = activeProperty === "all" ? true : activeProperty === dataKey;
 

@@ -49,149 +49,188 @@ import { StrokeRadarChart } from "@/charts/radar-charts/stroke-radar-chart";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
-const charts = [
+interface Chart {
+  title: string;
+  component: React.ReactNode;
+  position?: { x: number; y: number };
+}
+
+const charts: Chart[] = [
   // Bar Charts
   {
     title: "defaultBarChart",
     component: <DefaultBarChart />,
+    position: { x: 0, y: 100 },
   },
   {
     title: "defaultMultipleBarChart",
     component: <DefaultMultipleBarChart />,
+    position: { x: 0, y: -200 },
   },
   {
     title: "duotoneBarChart",
     component: <DuotoneBarChart />,
+    position: { x: 0, y: -500 },
   },
   {
     title: "duotoneBarMultipleChart",
     component: <DuotoneBarMultipleChart />,
+    position: { x: 0, y: -850 },
   },
   {
     title: "glowingBarChart",
     component: <GlowingBarChart />,
+    position: { x: 0, y: -1200 },
   },
   {
     title: "glowingBarVerticalChart",
     component: <GlowingBarVerticalChart />,
+    position: { x: 0, y: -1490 },
   },
   {
     title: "gradientBarChart",
     component: <GradientBarChart />,
+    position: { x: 0, y: -1800 },
   },
   {
     title: "gradientBarMultipleChart",
     component: <GradientBarMultipleChart />,
+    position: { x: 0, y: -2100 },
   },
   {
     title: "hatchedBarChart",
     component: <HatchedBarChart />,
+    position: { x: 0, y: -2450 },
   },
   {
     title: "hatchedBarMultipleChart",
     component: <HatchedBarMultipleChart />,
+    position: { x: -310, y: -50 },
   },
   {
     title: "highlightedBarChart",
     component: <HighlightedBarChart />,
+    position: { x: -310, y: -250 },
   },
   {
     title: "highlightedMultipleBarChart",
     component: <HighlightedMultipleBarChart />,
+    position: { x: -310, y: -550 },
   },
 
   // Animated Bar Charts
   {
     title: "monochromeBarChart",
     component: <MonochromeBarChart />,
+    position: { x: -310, y: -1000 },
   },
   {
     title: "valueLineBarChart",
     component: <ValueLineBarChart />,
+    position: { x: -310, y: -1300 },
   },
 
   // Area Charts
   {
     title: "animatedHatchedPatternAreaChart",
     component: <AnimatedHatchedPatternAreaChart />,
+    position: { x: -310, y: -1600 },
   },
   {
     title: "animatedHighlightedAreaChart",
     component: <AnimatedHighlightedAreaChart />,
+    position: { x: -310, y: -1900 },
   },
   {
     title: "barPatternChart",
     component: <BarPatternChart />,
+    position: { x: -310, y: -2200 },
   },
   {
     title: "dottedPatternAreaChart",
     component: <DottedPatternAreaChart />,
+    position: { x: -310, y: -2600 },
   },
   {
     title: "gradientAreaChart",
     component: <GradientAreaChart />,
+    position: { x: -740, y: 100 },
   },
   {
     title: "gradientRoundedAreaChart",
     component: <GradientRoundedAreaChart />,
+    position: { x: -740, y: -200 },
   },
 
   // Line Charts
   {
     title: "dottedLineChart",
     component: <DottedLineChart />,
+    position: { x: -740, y: -600 },
   },
   {
     title: "dottedMultiLineChart",
     component: <DottedMultiLineChart />,
+    position: { x: -740, y: -900 },
   },
   {
     title: "glowingLineChart",
     component: <GlowingLineChart />,
+    position: { x: -740, y: -1300 },
   },
   {
     title: "numberDotLineChart",
     component: <NumberDotLineChart />,
+    position: { x: -740, y: -1600 },
   },
   {
     title: "pingingDotChart",
     component: <PingingDotChart />,
+    position: { x: -740, y: -1900 },
   },
   {
     title: "rainbowGlowGradientLineChart",
     component: <RainbowGlowGradientLineChart />,
+    position: { x: -740, y: -2200 },
   },
 
   // Pie Charts
   {
     title: "increaseSizePieChart",
     component: <IncreaseSizePieChart />,
+    position: { x: -740, y: -2500 },
   },
   {
     title: "defaultRadialChart",
     component: <DefaultRadialChart />,
+    position: { x: -1160, y: 0 },
   },
   {
     title: "roundedPieChart",
     component: <RoundedPieChart />,
+    position: { x: -1160, y: -450 },
   },
 
   // Radar Charts
   {
     title: "glowingMultipleStrokeRadarChart",
     component: <GlowingMultipleStrokeRadarChart />,
+    position: { x: -1160, y: -850 },
   },
   {
     title: "glowingStrokeRadarChart",
     component: <GlowingStrokeRadarChart />,
+    position: { x: -1160, y: -1150 },
   },
   {
     title: "strokeMultipleRadarChart",
     component: <StrokeMultipleRadarChart />,
+    position: { x: -1160, y: -1550 },
   },
   {
     title: "strokeRadarChart",
     component: <StrokeRadarChart />,
+    position: { x: -1160, y: -2000 },
   },
 ];
 
@@ -215,19 +254,46 @@ const ViewChartsComponent = ({
 }: {
   selectedChart: SelectedChart;
 }) => {
-  const [activeChart, setActiveChart] = useState<string>(
-    "duotoneBarMultipleChart"
-  );
+  const [activeChart, setActiveChart] = useState<string>("defaultBarChart");
+  const [move, setMove] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const currentActiveChart = charts.find(
+      (chart) => chart.title === activeChart
+    );
+
+    if (currentActiveChart) {
+      if (currentActiveChart.position) {
+        setMove({
+          x: currentActiveChart.position.x,
+          y: currentActiveChart.position.y,
+        });
+      }
+    }
+  }, [activeChart]);
 
   useEffect(() => {
     setActiveChart(getActiveChart(selectedChart));
   }, [selectedChart]);
 
   return (
-    <div className="absolute h-full w-1/2 right-0 overflow-x-auto">
+    <div className="absolute h-full w-1/2 right-0 overflow-hidden hidden sm:block">
       <motion.div
+        style={{
+          willChange: "transform",
+        }}
+        animate={{
+          x: move.x,
+          y: move.y,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 70,
+          damping: 25,
+          mass: 1.2,
+          restDelta: 0.002,
+        }}
         className="flex flex-row w-max gap-4 p-40"
-         
       >
         {parts.map((part, index) => (
           <div
@@ -260,7 +326,7 @@ const ChartContainer = ({
     <div
       className={cn(
         "h-fit w-96 border rounded-2xl overflow-hidden z-10 duration-200",
-        isActive ? "opacity-100" : "opacity-50"
+        isActive ? "opacity-100 shadow-2xl scale-[1.02]" : "opacity-10"
       )}
     >
       {children}
@@ -294,7 +360,14 @@ const getActiveChart = (selectedChart: SelectedChart) => {
         Math.floor(Math.random() * animatedBarCharts.length)
       ];
     case "Area Charts":
-      const areaCharts = ["gradientAreaChart", "gradientRoundedAreaChart"];
+      const areaCharts = [
+        "gradientAreaChart",
+        "gradientRoundedAreaChart",
+        "animatedHatchedPatternAreaChart",
+        "animatedHighlightedAreaChart",
+        "barPatternChart",
+        "dottedPatternAreaChart",
+      ];
       return areaCharts[Math.floor(Math.random() * areaCharts.length)];
     case "Line Charts":
       const lineCharts = [
@@ -302,6 +375,8 @@ const getActiveChart = (selectedChart: SelectedChart) => {
         "numberDotLineChart",
         "pingingDotChart",
         "rainbowGlowGradientLineChart",
+        "dottedLineChart",
+        "dottedMultiLineChart",
       ];
       return lineCharts[Math.floor(Math.random() * lineCharts.length)];
     case "Pie Charts":
@@ -309,6 +384,10 @@ const getActiveChart = (selectedChart: SelectedChart) => {
         "increaseSizePieChart",
         "defaultRadialChart",
         "roundedPieChart",
+        "glowingMultipleStrokeRadarChart",
+        "glowingStrokeRadarChart",
+        "strokeMultipleRadarChart",
+        "strokeRadarChart",
       ];
       return pieCharts[Math.floor(Math.random() * pieCharts.length)];
     default:
