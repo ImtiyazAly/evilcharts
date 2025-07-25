@@ -278,6 +278,7 @@ const ViewChartsComponent = ({
 
   return (
     <div className="absolute h-full w-1/2 right-0 overflow-hidden hidden sm:block">
+      <div className="absolute top-0 left-0 h-full w-[100px] bg-gradient-to-r from-background to-transparent z-20" />
       <motion.div
         style={{
           willChange: "transform",
@@ -288,9 +289,8 @@ const ViewChartsComponent = ({
         }}
         transition={{
           type: "spring",
-          stiffness: 70,
-          damping: 25,
-          mass: 1.2,
+          stiffness: 80,
+          damping: 30,
           restDelta: 0.002,
         }}
         className="flex flex-row w-max gap-4 p-40"
