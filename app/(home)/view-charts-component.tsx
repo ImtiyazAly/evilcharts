@@ -247,7 +247,8 @@ export type SelectedChart =
   | "Animated Bar Charts"
   | "Area Charts"
   | "Line Charts"
-  | "Pie Charts";
+  | "Pie Charts"
+  | "Radar Charts";
 
 const ViewChartsComponent = ({
   selectedChart,
@@ -384,12 +385,16 @@ const getActiveChart = (selectedChart: SelectedChart) => {
         "increaseSizePieChart",
         "defaultRadialChart",
         "roundedPieChart",
+      ];
+      return pieCharts[Math.floor(Math.random() * pieCharts.length)];
+    case "Radar Charts":
+      const radarCharts = [
         "glowingMultipleStrokeRadarChart",
         "glowingStrokeRadarChart",
         "strokeMultipleRadarChart",
         "strokeRadarChart",
       ];
-      return pieCharts[Math.floor(Math.random() * pieCharts.length)];
+      return radarCharts[Math.floor(Math.random() * radarCharts.length)];
     default:
       return "duotoneBarMultipleChart";
   }

@@ -14,6 +14,7 @@ const options: SelectedChart[] = [
   "Area Charts",
   "Line Charts",
   "Pie Charts",
+  "Radar Charts",
 ];
 
 export default function Home() {
