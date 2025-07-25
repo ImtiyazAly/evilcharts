@@ -48,7 +48,7 @@ export function GenerateBreadcrumb({
                     "line-clamp-1 capitalize duration-300 dark:hover:text-white sm:max-w-full text-xs"
                   )}
                 >
-                  {last}
+                  {last.split("-").join(" ")}
                 </BreadcrumbItem>
               </Link>
             );
@@ -75,7 +75,7 @@ export function GenerateBreadcrumb({
                     `dark:text-white text-black font-semibold`
                 )}
               >
-                {path}
+                {path.split("-").join(" ")}
               </BreadcrumbItem>
             </Link>
           );

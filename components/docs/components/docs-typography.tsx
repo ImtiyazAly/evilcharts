@@ -153,7 +153,7 @@ const DocsLink = ({
         <span className="absolute -bottom-px h-px rounded w-full bg-primary/50 transition-all duration-300 group-hover:w-full group-hover:bg-primary"></span>
         {children}
       </span>
-      <LinkIcon className="inline ml-1 mb-1 group-hover:text-primary text-muted-foreground duration-200 size-3" />
+      <LinkIcon className="inline ml-0.5 mb-0.5 group-hover:text-primary text-muted-foreground duration-200 size-2.5" />
     </Link>
   );
 };
