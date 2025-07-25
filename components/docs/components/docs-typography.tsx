@@ -1,6 +1,7 @@
 import LinkIcon from "@/assets/svgs/LinkIcon";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { InfoIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -176,6 +177,23 @@ const DocsCodeBadge = ({
   );
 };
 
+const DocsHint = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={cn(className, "flex items-center text-muted-foreground/70 ")}
+    >
+      <InfoIcon className="inline size-3 mr-1" />
+      <span className="text-xs">{children}</span>
+    </div>
+  );
+};
+
 export {
   DocsContainer,
   DocsTitle,
@@ -187,4 +205,5 @@ export {
   DocsSubContainer,
   DocsLink,
   DocsCodeBadge,
+  DocsHint,
 };

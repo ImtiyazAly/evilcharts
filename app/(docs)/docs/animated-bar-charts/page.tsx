@@ -3,6 +3,8 @@ import ChartDisplay from "@/charts/utils/chart-display";
 import {
   DocsContainer,
   DocsDescription,
+  DocsHint,
+  DocsLink,
   DocsTitle,
 } from "@/components/docs/components/docs-typography";
 import { GenerateBreadcrumb } from "@/components/ui/generate-breadcrumb";
@@ -20,8 +22,8 @@ const Page = () => {
       <DocsContainer>
         <DocsTitle title="Animated Bar Charts" />
         <DocsDescription>
-          Bar charts are a type of chart that displays data using rectangular
-          bars.
+          Interactive bar charts with animated transitions. Hover on charts to
+          interact with them.
         </DocsDescription>
       </DocsContainer>
       <DisplayChartContainer>
@@ -38,6 +40,13 @@ const Page = () => {
           <ValueLineBarChart />
         </ChartDisplay>
       </DisplayChartContainer>
+      <DocsHint>
+        Thanks to{" "}
+        <DocsLink href="https://x.com/jshguo" _blank>
+          Joshua Guo
+        </DocsLink>{" "}
+        to create the monospace bar chart design.
+      </DocsHint>
     </div>
   );
 };
