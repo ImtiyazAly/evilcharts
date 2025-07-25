@@ -290,9 +290,8 @@ const ViewChartsComponent = ({
         }}
         transition={{
           type: "spring",
-          stiffness: 80,
-          damping: 30,
-          restDelta: 0.002,
+          stiffness: 75,
+          damping: 25,
         }}
         className="flex flex-row w-max gap-4 p-40"
       >
@@ -324,14 +323,27 @@ const ChartContainer = ({
   isActive: boolean;
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{
+        scale: 1,
+        opacity: 0.15,
+      }}
+      animate={{
+        scale: isActive ? 1.02 : 1,
+        opacity: isActive ? 1 : 0.15,
+      }}
+      transition={{
+        delay: isActive ? 0.8 : 0,
+        duration: 0.2,
+        ease: "easeInOut",
+      }}
       className={cn(
         "h-fit w-96 border rounded-2xl overflow-hidden z-10 duration-200",
-        isActive ? "opacity-100 shadow-2xl scale-[1.02]" : "opacity-10"
+        isActive && "shadow-2xl"
       )}
     >
       {children}
-    </div>
+    </motion.div>
   );
 };
 
