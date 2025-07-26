@@ -3,10 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { ChevronRight } from "lucide-react";
+import { ArrowUpRightIcon, ChevronRight, QuoteIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import ViewChartsComponent, { SelectedChart } from "./view-charts-component";
+import Image from "next/image";
 
 const options: SelectedChart[] = [
   "Bar Charts",
@@ -25,6 +26,42 @@ export default function Home() {
     <div className="relative flex ">
       <div className="min-h-[100svh] flex items-center mx-auto w-full max-w-4xl">
         <div className="flex flex-col gap-2 px-6 sm:px-0">
+          {/* shadcn quote */}
+          <Link
+            href="https://x.com/shadcn/status/1949116870432338383"
+            target="_blank"
+          >
+            <div className="bg-muted/20 p-4 rounded-lg mb-4 max-w-sm w-full hover:bg-muted/40 duration-200 cursor-pointer relative group">
+              <ArrowUpRightIcon
+                size={18}
+                className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 duration-200"
+              />
+              <div className="flex flex-col gap-2">
+                <QuoteIcon size={14} className="text-muted-foreground" />
+                <p className="text-muted-foreground text-sm">
+                  Yes. Recharts is my goto. See also evilcharts by{" "}
+                  <span className="text-primary">@LegionWebDev</span> for more
+                  chart styles.
+                </p>
+                <div className="flex flex-row gap-2 mt-1 items-center">
+                  <Image
+                    src="/shadcn.png"
+                    alt="shadcn"
+                    width={100}
+                    height={100}
+                    className="rounded-full w-5 h-5"
+                    unoptimized
+                  />
+                  <div className="flex flex-col">
+                    <div className="text-xs">shadcn</div>
+                    <div className="text-xs text-muted-foreground/50 leading-none">
+                      vercel design engineer
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
           {/* logo */}
           <div className="flex items-center gap-2">
             <span className="doto text-4xl font-black tracking-tighter">
