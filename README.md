@@ -2,9 +2,11 @@
 
 # 📊 EvilCharts
 
+Website: [evilcharts.com](https://evilcharts.com)
+
 A modern, customizable chart library for React and Next.js applications featuring visually stunning and interactive data visualizations.
 
-maintained by: [LegionWebDev](https://x.com/LegionWebDev)
+maintained by: [@LegionWebDev](https://x.com/LegionWebDev)
 
 ## ✨ Features
 
