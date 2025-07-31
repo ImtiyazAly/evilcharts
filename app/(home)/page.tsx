@@ -94,7 +94,7 @@ export default function Home() {
             </Link>
           </div>
           {/* options */}
-          <div className="flex flex-col gap-2 mt-8">
+          <div className="flex-col gap-2 mt-8 hidden sm:flex">
             {options.map((option) => (
               <div
                 key={option}
