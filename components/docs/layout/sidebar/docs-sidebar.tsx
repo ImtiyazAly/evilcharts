@@ -34,7 +34,7 @@ export function DocsSidebar({
   return (
     <Sidebar className="z-50" {...props}>
       <DocsSidebarHeader />
-      <SidebarContent>
+      <SidebarContent className="mt-2">
         {SIDEBAR_OPTIONS.gettingStarted.map((item) => (
           <SidebarGroup key={item.title}>
             <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
@@ -123,7 +123,7 @@ export function DocsSidebar({
           asChild
         >
           <Link
-            href="https://x.com/LegionWebDev"
+            href="https://x.com/legionsdev"
             target="_blank"
             rel="noopener noreferrer"
           >

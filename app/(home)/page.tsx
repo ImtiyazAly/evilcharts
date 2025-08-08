@@ -40,7 +40,7 @@ export default function Home() {
                 <QuoteIcon size={14} className="text-muted-foreground" />
                 <p className="text-muted-foreground text-sm">
                   Yes. Recharts is my goto. See also evilcharts by{" "}
-                  <span className="text-primary">@LegionWebDev</span> for more
+                  <span className="text-primary">@legionsdev</span> for more
                   chart styles.
                 </p>
                 <div className="flex flex-row gap-2 mt-1 items-center">
