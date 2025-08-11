@@ -256,4 +256,13 @@ export const components: ComponentProps[] = [
     registryDependencies: ["chart"],
     dependencies: ["recharts", "motion"],
   },
+  {
+    name: "clipped-area-chart",
+    path: path.join(
+      __dirname,
+      "../charts/animated-area-charts/clipped-area-chart"
+    ),
+    registryDependencies: ["chart"],
+    dependencies: ["recharts", "motion"],
+  },
 ];

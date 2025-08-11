@@ -1,8 +1,12 @@
 {
   "name": "glowing-bar-vertical-chart",
   "type": "registry:ui",
-  "registryDependencies": ["chart"],
-  "dependencies": ["recharts"],
+  "registryDependencies": [
+    "chart"
+  ],
+  "dependencies": [
+    "recharts"
+  ],
   "devDependencies": [],
   "tailwind": {},
   "cssVars": {

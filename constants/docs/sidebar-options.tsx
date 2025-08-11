@@ -46,7 +46,7 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
       ],
     },
     {
-      title: "Charts",
+      title: "Area Charts",
       url: "#",
       items: [
         {
@@ -54,6 +54,17 @@ export const SIDEBAR_OPTIONS: SidebarOptionsProps = {
           url: "/docs/area-charts",
           icon: <AreaChart />,
         },
+        {
+          title: "Animated Area Chart",
+          url: "/docs/animated-area-charts",
+          icon: <AreaChart />,
+        },
+      ],
+    },
+    {
+      title: "Charts",
+      url: "#",
+      items: [
         {
           title: "Line Chart",
           url: "/docs/line-charts",
