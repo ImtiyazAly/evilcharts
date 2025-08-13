@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className="relative flex ">
       <div className="min-h-[100svh] flex items-center mx-auto w-full max-w-4xl">
-        <div className="flex flex-col gap-2 px-6 sm:px-0">
+        <div className="flex flex-col gap-2 px-6 z-30">
           {/* shadcn quote */}
           <Link
             href="https://x.com/shadcn/status/1949116870432338383"
