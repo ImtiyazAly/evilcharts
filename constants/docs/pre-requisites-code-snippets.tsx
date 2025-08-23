@@ -28,7 +28,7 @@ export const CODE_SNIPPETS: CodeSnippetProps = {
     language: "bash",
   },
   ADD_COMPONENTS: {
-    code: `npx shadcn@latest add charts label card`,
+    code: `npx shadcn@latest add chart label card`,
     language: "bash",
   },
   INSTALL_RECHARTS: {
