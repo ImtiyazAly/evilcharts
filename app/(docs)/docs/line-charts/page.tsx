@@ -23,6 +23,8 @@ import GlowingLineChartJson from "@/public/chart/glowing-line.json";
 import RainbowGlowGradientLineChartJson from "@/public/chart/rainbow-glow-gradient-line.json";
 import PingingDotChartJson from "@/public/chart/pinging-dot-chart.json";
 import NumberDotLineChartJson from "@/public/chart/number-dot-chart.json";
+import { PartialLineChart } from "@/charts/line-charts/partial-line";
+import PartialLineChartJson from "@/public/chart/partial-line.json";
 
 const Page = () => {
   return (
@@ -78,6 +80,22 @@ const Page = () => {
         </ChartDisplay>
         <ChartDisplay name="Line Chart" jsonContent={NumberDotLineChartJson}>
           <NumberDotLineChart key="number-dot-line-chart" />
+        </ChartDisplay>
+      </DisplayChartContainer>
+      {/* Partial Line Charts */}
+      <DocsSubContainer>
+        <DocsSubtitle title="Partial Line" />
+        <DocsSubDescription>
+          A line chart with a partial line.
+        </DocsSubDescription>
+      </DocsSubContainer>
+      <DisplayChartContainer>
+        <ChartDisplay
+          className="col-span-2"
+          name="Partial Line"
+          jsonContent={PartialLineChartJson}
+        >
+          <PartialLineChart key="partial-line-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
     </div>

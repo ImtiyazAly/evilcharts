@@ -265,4 +265,10 @@ export const components: ComponentProps[] = [
     registryDependencies: ["chart"],
     dependencies: ["recharts", "motion"],
   },
+  {
+    name: "partial-line",
+    path: path.join(__dirname, "../charts/line-charts/partial-line"),
+    registryDependencies: ["chart"],
+    dependencies: ["recharts"],
+  },
 ];
