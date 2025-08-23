@@ -16,7 +16,9 @@ interface CodeBlockProps {
   heightAuto?: boolean;
 }
 
-// Server Component (async) - for use in server-side pages
+// -------------------
+// Server Component
+// -------------------
 const CodeBlock = async ({
   language,
   code,
@@ -26,11 +28,15 @@ const CodeBlock = async ({
 }: CodeBlockProps) => {
   const html = await codeToHtml(code, {
     lang: language,
-    theme: "one-dark-pro",
+    themes: {
+      light: "min-light",
+      dark: "vesper",
+    },
+    defaultColor: false,
   });
 
   return (
-    <div className="bg-border/40 p-1 rounded-[14px] group dark:shadow-md ">
+    <div className="bg-border/40 p-1 rounded-[14px] group dark:shadow-md">
       <div className="pb-2 py-1 px-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {getCodeBlockIcon(type)}
@@ -45,7 +51,9 @@ const CodeBlock = async ({
   );
 };
 
-// Client Component (non-async) - for use in client components with pre-generated HTML
+// -------------------
+// Client Component
+// -------------------
 interface CodeBlockClientProps {
   html: string;
   code: string;
@@ -78,22 +86,35 @@ const CodeBlockClient = ({
   );
 };
 
-const AddShadcnCodeBlock = ({ text }: { text: string }) => {
+// -------------------
+// AddShadcnCodeBlock
+// -------------------
+const AddShadcnCodeBlock = async ({ text }: { text: string }) => {
+  const html = await codeToHtml(text, {
+    lang: "bash",
+    themes: {
+      light: "min-light",
+      dark: "vesper",
+    },
+    defaultColor: false,
+  });
+
   return (
     <div className="bg-border/40 p-1 rounded-[14px] group dark:shadow-md flex flex-col">
-      <div className="flex justify-between px-3 py-1 items-center">
+      <div className="flex justify-between px-3 py-2 items-center">
         <span className="text-xs text-muted-foreground">Command</span>
         <CopyButton code={text} />
       </div>
-      <span className="p-3 text-sm bg-white dark:bg-[#27272A] rounded-xl font-medium text-secondary-foreground">
-        {text}
-      </span>
+      <CodeBlockHtml html={html} heightAuto />
     </div>
   );
 };
 
 export { CodeBlock, CodeBlockClient, AddShadcnCodeBlock };
 
+// -------------------
+// Icon helper
+// -------------------
 const getCodeBlockIcon = (type: CodeBlockType) => {
   switch (type) {
     case "code":
