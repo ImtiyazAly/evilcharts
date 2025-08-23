@@ -6,8 +6,6 @@ Website: [evilcharts.com](https://evilcharts.com)
 
 A modern, customizable chart library for React and Next.js applications featuring visually stunning and interactive data visualizations.
 
-maintained by: [@legionsdev](https://x.com/legionsdev)
-
 ## ✨ Features
 
 - 🎨 Beautiful pre-designed chart components
