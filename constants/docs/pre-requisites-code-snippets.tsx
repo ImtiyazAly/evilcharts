@@ -32,7 +32,7 @@ export const CODE_SNIPPETS: CodeSnippetProps = {
     language: "bash",
   },
   INSTALL_RECHARTS: {
-    code: `npm install recharts`,
+    code: `npm install recharts@2.15.4`,
     language: "bash",
   },
 };
