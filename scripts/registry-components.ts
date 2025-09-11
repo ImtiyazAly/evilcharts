@@ -199,6 +199,12 @@ export const components: ComponentProps[] = [
     registryDependencies: ["chart"],
     dependencies: ["recharts"],
   },
+    {
+    name: "glowing-radial-chart",
+    path: path.join(__dirname, "../charts/pie-charts/glowing-radial-chart"),
+    registryDependencies: ["chart"],
+    dependencies: ["recharts"],
+  },
   {
     name: "rounded-pie-chart",
     path: path.join(__dirname, "../charts/pie-charts/rounded-pie-chart"),

@@ -40,6 +40,7 @@ import { RainbowGlowGradientLineChart } from "@/charts/line-charts/rainbow-glow-
 import { IncreaseSizePieChart } from "@/charts/pie-charts/increase-size-pie-chart";
 import { DefaultRadialChart } from "@/charts/pie-charts/radial-chart";
 import { RoundedPieChart } from "@/charts/pie-charts/rounded-pie-chart";
+import { GlowingRadialChart } from "@/charts/pie-charts/glowing-radial-chart";
 
 // Radar Charts
 import { GlowingMultipleStrokeRadarChart } from "@/charts/radar-charts/glowing-multiple-stroke-radar-chart";
@@ -204,6 +205,11 @@ const charts: Chart[] = [
     title: "defaultRadialChart",
     component: <DefaultRadialChart />,
     position: { x: -1160, y: 0 },
+  },
+  {
+    title: "glowingRadialChart",
+    component: <GlowingRadialChart />,
+    position: { x: -1160, y: -300 },
   },
   {
     title: "roundedPieChart",
@@ -396,6 +402,7 @@ const getActiveChart = (selectedChart: SelectedChart) => {
       const pieCharts = [
         "increaseSizePieChart",
         "defaultRadialChart",
+        "glowingRadialChart",
         "roundedPieChart",
       ];
       return pieCharts[Math.floor(Math.random() * pieCharts.length)];
