@@ -1,6 +1,7 @@
 import { IncreaseSizePieChart } from "@/charts/pie-charts/increase-size-pie-chart";
 import { DefaultRadialChart } from "@/charts/pie-charts/radial-chart";
 import { RoundedPieChart } from "@/charts/pie-charts/rounded-pie-chart";
+import { GlowingRadialChart } from "@/charts/pie-charts/glowing-radial-chart";
 import DisplayChartContainer from "@/charts/utils/chart-container";
 import ChartDisplay from "@/charts/utils/chart-display";
 import {
@@ -17,6 +18,7 @@ import React from "react";
 import DefaultPieChartJson from "@/public/chart/rounded-pie-chart.json";
 import IncreaseSizePieChartJson from "@/public/chart/increase-size-pie-chart.json";
 import RadialChartJson from "@/public/chart/radial-chart.json";
+import GlowingRadialChartJson from "@/public/chart/glowing-radial-chart.json";
 
 const Page = () => {
   return (
@@ -45,12 +47,15 @@ const Page = () => {
       </DisplayChartContainer>
       {/* Radial Chart */}
       <DocsSubContainer>
-        <DocsSubtitle title="Radial Chart" />
-        <DocsSubDescription>A radial chart.</DocsSubDescription>
+        <DocsSubtitle title="Radial Charts" />
+        <DocsSubDescription>Radial charts with different styles.</DocsSubDescription>
       </DocsSubContainer>
       <DisplayChartContainer>
         <ChartDisplay name="Radial Chart" jsonContent={RadialChartJson}>
           <DefaultRadialChart key="radial-chart" />
+        </ChartDisplay>
+        <ChartDisplay name="Glowing Radial Chart" jsonContent={GlowingRadialChartJson}>
+          <GlowingRadialChart key="glowing-radial-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
     </div>
