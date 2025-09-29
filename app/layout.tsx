@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Doto, JetBrains_Mono, Instrument_Sans } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 import MicrosoftClarity from "@/providers/microsoft-clarity";
 import Analytics from "@/providers/analytics";
 import { ThemeProvider } from "next-themes";
@@ -26,8 +25,9 @@ export const metadata: Metadata = {
   title: "Evil Charts - Beautiful & Animated Charts",
   description:
     "Evil Charts is a library of beautiful charts components that are easy to use and customize. It is built with Tailwind CSS and React. Built on top of shadcn/recharts.",
+  metadataBase: new URL("https://evilcharts.com"),
   openGraph: {
-    images: ["/banner.png"],
+    images: ["https://evilcharts/banner.png"],
   },
   icons: {
     icon: "/favicon.png",
@@ -36,19 +36,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const fontClasses = `${dotoFont.variable} ${jetbrainsMonoFont.variable} ${instrumentSansFont.variable} antialiased instrument-sans`;
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          dotoFont.variable,
-          jetbrainsMonoFont.variable,
-          instrumentSansFont.variable,
-          "antialiased instrument-sans"
-        )}
-      >
+      <body className={fontClasses} suppressHydrationWarning>
         <ThemeProvider defaultTheme="system" attribute="class">
           <MicrosoftClarity />
           <Analytics />
