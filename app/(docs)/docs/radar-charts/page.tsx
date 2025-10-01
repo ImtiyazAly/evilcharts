@@ -4,6 +4,7 @@ import { StrokeRadarChart } from "@/charts/radar-charts/stroke-radar-chart";
 import { StrokeMultipleRadarChart } from "@/charts/radar-charts/stroke-multiple-radar-chart";
 import DisplayChartContainer from "@/charts/utils/chart-container";
 import ChartDisplay from "@/charts/utils/chart-display";
+import { AnimatedClippedRadarChart } from "@/charts/radar-charts/animated-clipped-radar-chart";
 import {
   DocsContainer,
   DocsDescription,
@@ -19,6 +20,7 @@ import DefaultRadarChartJson from "@/public/chart/radial-chart.json";
 import DefaultMultipleRadarChartJson from "@/public/chart/stroke-multiple-radar-chart.json";
 import GlowingStrokeRadarChartJson from "@/public/chart/glowing-stroke-radar-chart.json";
 import GlowingMultipleStrokeRadarChartJson from "@/public/chart/glowing-multiple-stroke-radar-chart.json";
+import AnimatedClippedRadarChartJson from "@/public/chart/animated-clipped-radar-chart.json";
 
 const Page = () => {
   return (
@@ -65,6 +67,18 @@ const Page = () => {
           jsonContent={GlowingMultipleStrokeRadarChartJson}
         >
           <GlowingMultipleStrokeRadarChart key="glowing-multiple-stroke-radar-chart" />
+        </ChartDisplay>
+      </DisplayChartContainer>
+      {/* Animated Clipped Radar Chart */}
+      <DocsSubContainer>
+        <DocsSubtitle title="Animated Clipped Radar Chart" />
+        <DocsSubDescription>
+          A radar chart with an animated clipped area.
+        </DocsSubDescription>
+      </DocsSubContainer>
+      <DisplayChartContainer>
+        <ChartDisplay name="Radar Chart" jsonContent={AnimatedClippedRadarChartJson}>
+          <AnimatedClippedRadarChart key="animated-clipped-radar-chart" />
         </ChartDisplay>
       </DisplayChartContainer>
     </div>
