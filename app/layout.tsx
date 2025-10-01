@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Doto, JetBrains_Mono, Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 import MicrosoftClarity from "@/providers/microsoft-clarity";
 import Analytics from "@/providers/analytics";
 import { ThemeProvider } from "next-themes";
@@ -39,10 +40,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const fontClasses = `${dotoFont.variable} ${jetbrainsMonoFont.variable} ${instrumentSansFont.variable} antialiased instrument-sans`;
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={fontClasses} suppressHydrationWarning>
+      <body
+        className={cn(
+          dotoFont.variable,
+          jetbrainsMonoFont.variable,
+          instrumentSansFont.variable,
+          "antialiased instrument-sans"
+        )}
+        suppressHydrationWarning
+      >
         <ThemeProvider defaultTheme="system" attribute="class">
           <MicrosoftClarity />
           <Analytics />
